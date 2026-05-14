@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+/* 🏛️ 1. EXTERNAL ENGINE IMPORTS */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+/* 💎 2. BRAND LUXURY COLOR CONFIGURATION */
+:root {
+  --linen: #F9F7F2;
+  --gold: #C5A059;
+  --charcoal: #1A1A1A;
+}
+
+/* 🪐 3. GLOBAL WORKSPACE ENVIRONMENT */
+body {
+  background-color: var(--linen) !important;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--charcoal);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 🏛️ 4. EDITORIAL VOGUE TYPOGRAPHY */
+.serif { 
+  font-family: 'Playfair Display', Georgia, serif !important; 
+}
+
+.ls-5 { 
+  letter-spacing: 5px !important; 
+}
+
+.gold { 
+  color: var(--gold) !important; 
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* 🛍️ 5. ADDICTIVE MAGNETIC HANDBAG INTERACTION */
+.magnetic-bag {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.magnetic-bag:hover {
+  transform: scale(1.18) rotate(-6deg);
+}
+
+/* 🎬 6. "JAW-DROP" ENTRY TRANSFORM */
+.hero-title {
+  font-size: clamp(3.5rem, 11vw, 8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  animation: elegantFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes elegantFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px) skewY(2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skewY(0);
+  }
+}
