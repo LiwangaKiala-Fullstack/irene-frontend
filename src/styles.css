@@ -1,15 +1,15 @@
-/* 🏛️ 1. EXTERNAL ENGINE IMPORTS */
+/* 🏛️ 1. EXTERNAL ENGINE ASSET IMPORTS */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
-/* 💎 2. BRAND LUXURY COLOR CONFIGURATION */
+/* 💎 2. BRAND LUXURY COLOR PALETTE VARIABLES */
 :root {
   --linen: #F9F7F2;
   --gold: #C5A059;
   --charcoal: #1A1A1A;
 }
 
-/* 🪐 3. GLOBAL WORKSPACE ENVIRONMENT */
+/* 🪐 3. GLOBAL BROWSER BASE DECORATION */
 body {
   background-color: var(--linen) !important;
   font-family: 'Inter', -apple-system, sans-serif;
@@ -17,9 +17,10 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* 🏛️ 4. EDITORIAL VOGUE TYPOGRAPHY */
+/* 🏛️ 4. LUXURY PORTFOLIO BRANDING CORE STYLES */
 .serif { 
   font-family: 'Playfair Display', Georgia, serif !important; 
 }
@@ -36,7 +37,37 @@ body {
   cursor: pointer;
 }
 
-/* 🛍️ 5. ADDICTIVE MAGNETIC HANDBAG INTERACTION */
+/* 🏛️ 5. MINIMALIST LINKS UNDERLINE INTERACTION INTERFACE */
+.nav-editorial-link {
+  letter-spacing: 3px !important;
+  position: relative;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.nav-editorial-link:hover {
+  opacity: 1;
+}
+
+.nav-editorial-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--gold);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-editorial-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 🛍️ 6. BOUTIQUE BAG SPRING TRANSITIONS */
 .magnetic-bag {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -45,7 +76,7 @@ body {
   transform: scale(1.18) rotate(-6deg);
 }
 
-/* 🎬 6. "JAW-DROP" ENTRY TRANSFORM */
+/* 🎬 7. SECTION 1 MOUTH-OPEN INTRO ANIMATION STYLE RULES */
 .hero-title {
   font-size: clamp(3.5rem, 11vw, 8rem);
   font-weight: 700;
@@ -62,4 +93,23 @@ body {
     opacity: 1;
     transform: translateY(0) skewY(0);
   }
+}
+
+/* 🖼️ 8. SECTION 2 ASYMMETRIC GRID MICRO-ANIMATIONS */
+.gallery-card {
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-wrapper {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06) !important;
+}
+
+.gallery-card:hover .img-wrapper {
+  transform: scale(1.04);
 }
