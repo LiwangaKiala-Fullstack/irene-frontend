@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -244,9 +244,8 @@ import { Component } from '@angular/core';
             <h2 class="serif display-5 fw-light">Live Studio Stream</h2>
           </div>
         </div>
-        <!-- 4-Column Minimal Social Row using Modern Angular Control Flow -->
         <div class="row g-4">
-          @for (item of [1, 2, 3, 4]; track item) {
+          @for (item of [1,2,3,4]; track item) {
             <div class="col-6 col-lg-3">
               <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
                 <div class="bg-dark d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; --bs-bg-opacity: 0.04;">
@@ -296,7 +295,57 @@ import { Component } from '@angular/core';
           </div>
         </div>
       </section>
+
+      <!-- ✨ FLOATING UTILITY LAYER: BACK TO TOP ARROW & AI CONCIERGE -->
+      <div class="floating-controls d-flex flex-column gap-3 position-fixed bottom-4 end-4" style="z-index: 9999;">
+        <!-- 🔼 THE BACK-TO-TOP ESCALATOR -->
+        <button (click)="scrollToTop()" [class.visible]="showScrollArrow" class="btn-scroll-top d-flex align-items-center justify-content-center shadow-sm">
+          <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <!-- 🤖 THE AI ART ASSISTANT TRIGGER -->
+        <button (click)="toggleAiPanel()" class="btn-ai-assistant d-flex align-items-center justify-content-center shadow">
+          <i class="bi bi-chat-left-dots-fill text-white"></i>
+        </button>
+      </div>
+
+      <!-- 🔮 SLIDE-OUT AI ASSISTANT DRAWER PANEL -->
+      <div [class.open]="isAiPanelOpen" class="ai-drawer-panel position-fixed top-0 end-0 h-100 bg-white shadow-lg d-flex flex-column" style="z-index: 10000; width: 380px;">
+        <div class="p-4 border-bottom d-flex justify-content-between align-items-center bg-light">
+          <div>
+            <h4 class="serif h5 mb-1 fw-bold">Atelier AI Concierge</h4>
+            <span class="text-success small font-monospace" style="font-size: 0.65rem;"><i class="bi bi-circle-fill me-1 small"></i> ONLINE ART ADVISOR</span>
+          </div>
+          <button (click)="toggleAiPanel()" class="btn-close shadow-none" style="font-size: 0.8rem;"></button>
+        </div>
+        <div class="flex-grow-1 p-4 overflow-y-auto font-monospace" style="font-size: 0.8rem; background: #FAF9F6;">
+          <div class="ai-msg bg-white p-3 shadow-sm border mb-3">
+            Welcome to the Atelier. I am your specialized AI Art Advisor. Ask me anything about Irene's vibrational frequencies, paint medium compounding, or canvas availabilities.
+          </div>
+        </div>
+        <div class="p-3 border-top bg-white d-flex gap-2">
+          <input type="text" placeholder="Ask about canvas mediums..." class="form-control rounded-0 border font-monospace small" style="font-size: 0.75rem; outline: none;">
+          <button class="btn btn-dark rounded-0 px-3 py-2"><i class="bi bi-send-fill" style="font-size: 0.8rem;"></i></button>
+        </div>
+      </div>
     </main>
   `
 })
-export class App {}
+export class App {
+  showScrollArrow = false;
+  isAiPanelOpen = false;
+
+  // 📐 Track the page scroll vector to display/hide the escalator arrow dynamically
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollArrow = window.scrollY > 300;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  toggleAiPanel() {
+    this.isAiPanelOpen = !this.isAiPanelOpen;
+  }
+}
