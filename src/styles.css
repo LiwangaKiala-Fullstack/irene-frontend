@@ -113,3 +113,87 @@ body {
 .gallery-card:hover .img-wrapper {
   transform: scale(1.04);
 }
+/* 🏛️ SECTION 3: BOOKING CARD REFINEMENTS */
+.booking-card {
+  border: 1px solid rgba(0, 0, 0, 0.01) !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.booking-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.05) !important;
+}
+
+.style-badge {
+  font-size: 0.65rem !important;
+  letter-spacing: 2px !important;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--charcoal) !important;
+}
+/* 🛍️ SECTION 4: LUXURY SHOP INTERACTION PLUGINS */
+.shop-card {
+  border: 1px solid rgba(0, 0, 0, 0.02) !important;
+  transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shop-img-wrapper {
+  transition: background-color 0.4s ease;
+}
+
+.shop-card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05) !important;
+}
+
+.shop-card .btn-dark {
+  background-color: var(--charcoal);
+  border: none;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.shop-card .btn-dark:hover {
+  opacity: 1;
+  background-color: var(--gold) !important;
+}
+/* 📖 SECTION 5 & 6: BRAND MANIFESTO + VIDEO RULES */
+.manifesto-frame {
+  border: 1px solid rgba(0, 0, 0, 0.02) !important;
+}
+
+.video-container {
+  border: 1px solid rgba(0, 0, 0, 0.02) !important;
+}
+
+.play-btn-glow {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.video-overlay-play:hover .play-btn-glow {
+  transform: scale(1.1);
+  color: var(--gold) !important;
+}
+/* 📸📸 SECTION 7 & 8: INSTAGRAM MATRIX & FOOTER REFINEMENTS */
+.instagram-card {
+  border: 1px solid rgba(0, 0, 0, 0.02) !important;
+}
+
+.wrapper-box {
+  transition: transform 0.5s ease;
+}
+
+.instagram-card:hover .wrapper-box {
+  transform: scale(1.02);
+}
+
+.instagram-card:hover .insta-hover-overlay {
+  opacity: 1 !important;
+}
+
+.transition-all {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom form corrections for footer elements */
+input::placeholder {
+  color: rgba(249, 247, 242, 0.3) !important;
+}
