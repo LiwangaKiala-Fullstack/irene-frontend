@@ -47,7 +47,8 @@ import { HttpClient } from '@angular/common/http';
       <section id="home" class="vh-100 d-flex align-items-center justify-content-center text-center px-4 parallax-hero" 
                style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg');">
         <div>
-          <h1 class="hero-title serif mb-5" style="text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
+          <!-- Scaled down the title style parameters gracefully to avoid overwhelming text sizes -->
+          <h1 class="serif mb-5" style="font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.2; color: #2B2B2B; text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
             A Passion for <br>
             <span class="fst-italic willow">Creativity</span>
           </h1>
@@ -57,7 +58,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🖼️ SECTION 2: THE FINE ART GALLERY GRID (Framed Paintings) -->
+      <!-- 🖼️ SECTION 2: THE FINE ART GALLERY GRID (Framed Paintings - Full Display) -->
       <section id="gallery" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-start">
@@ -68,9 +69,9 @@ import { HttpClient } from '@angular/common/http';
         <div class="row g-5 align-items-center">
           <div class="col-12 col-lg-7">
             <div class="gallery-card overflow-hidden bg-white p-3 shadow-sm">
-              <div class="img-wrapper overflow-hidden bg-light" style="height: 55vh;">
-                <!-- 🖼️ Irene-3: Horizontal Framed Painting Piece -->
-                <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-cover" alt="Framed original artwork">
+              <!-- Changed to object-fit-contain to fully display the entire uncropped image structure -->
+              <div class="img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center" style="height: 55vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-contain" alt="Framed original artwork">
               </div>
               <div class="d-flex justify-content-between mt-3 px-2">
                 <span class="serif fw-normal text-uppercase tracking-wider">Watercolour & Ink Studies</span>
@@ -80,9 +81,8 @@ import { HttpClient } from '@angular/common/http';
           </div>
           <div class="col-12 col-lg-5">
             <div class="gallery-card overflow-hidden bg-white p-3 shadow-sm">
-              <div class="img-wrapper overflow-hidden bg-light" style="height: 70vh;">
-                <!-- 🖼️ Irene-4: Tall Vertical Framed Painting Piece -->
-                <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-cover" alt="Nature inspired painting series">
+              <div class="img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center" style="height: 70vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-contain" alt="Nature inspired painting series">
               </div>
               <div class="d-flex justify-content-between mt-3 px-2">
                 <span class="serif fw-normal text-uppercase tracking-wider">Nature Inspired Series</span>
@@ -93,7 +93,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE (Painting Parties with Students) -->
+      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE (Painting Parties - Full Display) -->
       <section id="classes" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-start">
@@ -102,12 +102,11 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4">
-          <!-- Workshop Card 1: Student Painting Session Image Background -->
           <div class="col-12 col-md-6 col-xl-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 52vh;">
-              <div class="position-relative" style="height: 22vh; overflow:hidden;">
-                <!-- 🖼️ Irene-1: Painting Party with Students Group Shot -->
-                <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-cover" alt="Painting class party session">
+              <!-- Switched step container to display full width/height profiles uncropped -->
+              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 22vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-contain" alt="Painting class party session">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div>
@@ -126,12 +125,10 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
-          <!-- Workshop Card 2: Creative Illustration Session Image Background -->
           <div class="col-12 col-md-6 col-xl-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 52vh;">
-              <div class="position-relative" style="height: 22vh; overflow:hidden;">
-                <!-- 🖼️ Irene-2: Student Workspace Closeup -->
-                <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-cover" alt="Ink & illustration class setting">
+              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 22vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-contain" alt="Ink & illustration class setting">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div>
@@ -150,7 +147,6 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
-          <!-- Workshop Card 3: 1-on-1 Studio Mentoring Layout -->
           <div class="col-12 col-md-6 col-xl-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 52vh;">
               <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 22vh;">
@@ -175,7 +171,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🛍️ SECTION 4: THE ART SHOP ORIGINAL SELECTIONS (Handmade Artisan Earrings) -->
+      <!-- 🛍️ SECTION 4: THE ART SHOP ORIGINAL SELECTIONS (Handmade Earrings - Full Display) -->
       <section id="shop" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-start">
@@ -184,12 +180,10 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4">
-          <!-- Product Item 1: Artisan Handcrafted Earrings -->
           <div class="col-12 col-md-6">
             <div class="shop-card bg-white p-3 shadow-sm border-0">
-              <div class="shop-img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative" style="height: 45vh;">
-                <!-- 🖼️ Irene-5: Artisan Earring Option A Product Photo -->
-                <img src="image/Irene-5.jpg" class="w-100 h-100 object-fit-cover" alt="Handcrafted artisan earrings">
+              <div class="shop-img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative" style="height: 45vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-5.jpg" class="w-100 h-100 object-fit-contain" alt="Handcrafted artisan earrings">
                 <span class="position-absolute top-3 start-3 badge bg-dark rounded-0 text-uppercase small ls-2" style="font-size: 0.6rem; letter-spacing: 1px;">Handmade</span>
               </div>
               <div class="mt-4 px-2">
@@ -205,12 +199,10 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
-          <!-- Product Item 2: Premium Painting Option -->
           <div class="col-12 col-md-6">
             <div class="shop-card bg-white p-3 shadow-sm border-0">
-              <div class="shop-img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative" style="height: 45vh;">
-                <!-- 🖼️ Irene-6: Artisan Earring Option B / Mini Frame Illustration -->
-                <img src="image/Irene-6.jpg" class="w-100 h-100 object-fit-cover" alt="Boutique art print item">
+              <div class="shop-img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative" style="height: 45vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-6.jpg" class="w-100 h-100 object-fit-contain" alt="Boutique art print item">
                 <span class="position-absolute top-3 start-3 badge bg-dark rounded-0 text-uppercase small ls-2" style="font-size: 0.6rem; letter-spacing: 1px;">Limited Edition</span>
               </div>
               <div class="mt-4 px-2">
@@ -228,7 +220,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 📖 SECTION 5: THE BIOGRAPHY STATEMENT (Mural Project Background) -->
+      <!-- 📖 SECTION 5: THE BIOGRAPHY STATEMENT (Mural Project - Full Display) -->
       <section id="about" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px;">
         <div class="row align-items-center py-5">
           <div class="col-12 col-lg-6 pe-lg-5 mb-5 mb-lg-0">
@@ -247,16 +239,15 @@ import { HttpClient } from '@angular/common/http';
           </div>
           <div class="col-12 col-lg-6">
             <div class="manifesto-frame bg-white p-4 shadow-sm text-center position-relative">
-              <div class="bg-light d-flex align-items-center justify-content-center text-dark" style="height: 60vh;">
-                <!-- 🖼️ Irene-7: Mural Painting Project Execution Display Photo -->
-                <img src="image/Irene-7.jpg" class="w-100 h-100 object-fit-cover" alt="Mural project in progress">
+              <div class="bg-light d-flex align-items-center justify-content-center text-dark" style="height: 60vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-7.jpg" class="w-100 h-100 object-fit-contain" alt="Mural project in progress">
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 📸 SECTION 7: THE INSTAGRAM LIVE MEDIA MATRICES (Extra Material Shots) -->
+      <!-- 📸 SECTION 7: THE INSTAGRAM LIVE MEDIA MATRICES (Diary Stream - Full Display) -->
       <section id="social-feed" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF;">
         <div class="row mb-5 pt-4">
           <div class="col-12 text-start">
@@ -268,9 +259,8 @@ import { HttpClient } from '@angular/common/http';
           @for (item of [1,2,3,4]; track item) {
             <div class="col-6 col-lg-3">
               <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
-                <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh;">
-                  <!-- 🖼️ Irene-8: Mapped as loop fallback image background matrix placeholder -->
-                  <img src="image/Irene-8.jpg" class="w-100 h-100 object-fit-cover" alt="Studio diary stream update">
+                <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; background-color: #FAF9F6 !important;">
+                  <img src="image/Irene-8.jpg" class="w-100 h-100 object-fit-contain" alt="Studio diary stream update">
                   <div class="insta-hover-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-75 opacity-0 transition-all">
                     <span class="text-white small tracking-widest text-uppercase fw-bold" style="font-size: 0.7rem;"><i class="bi bi-heart-fill me-2"></i> View Post</span>
                   </div>
