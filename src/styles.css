@@ -1,47 +1,50 @@
-/* 🏛️ 1. EXTERNAL ENGINE ASSET IMPORTS */
+/* 🏛️ 1. CORE ENGINE FRAMEWORK ASSET IMPORTS */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
-/* 💎 2. BRAND LUXURY COLOR PALETTE VARIABLES */
+/* 🌾 2. THE BRAND MINIMALIST NATURAL PALETTE VARIABLES */
 :root {
-  --linen: #F9F7F2;
-  --gold: #C5A059;
-  --charcoal: #1A1A1A;
+  --gallery-white: #FFFFFF;
+  --soft-wash-bg: #FCFAF7;       /* Soft gallery linen wash */
+  --neutral-linen: #F4F1EA;      /* Frame matting border tint */
+  --charcoal-ink: #2B2B2B;       /* Natural premium deep dark text */
+  --willow-slate: #7A7875;       /* Calming slate subtext grey */
 }
 
-/* 🪐 3. GLOBAL BROWSER BASE DECORATION */
+/* 🪐 3. GLOBAL SCREEN LAYOUT ENVIRONMENT */
 body {
-  background-color: var(--linen) !important;
+  background-color: var(--gallery-white) !important;
   font-family: 'Inter', -apple-system, sans-serif;
-  color: var(--charcoal);
+  color: var(--charcoal-ink);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-/* 🏛️ 4. LUXURY PORTFOLIO BRANDING CORE STYLES */
+/* 🏛️ 4. EDITORIAL LOGO & NAVIGATION BRAND LAYOUT STYLES */
 .serif { 
   font-family: 'Playfair Display', Georgia, serif !important; 
+  color: var(--charcoal-ink) !important;
 }
 
 .ls-5 { 
-  letter-spacing: 5px !important; 
+  letter-spacing: 4px !important; 
 }
 
-.gold { 
-  color: var(--gold) !important; 
+.willow { 
+  color: var(--willow-slate) !important; 
 }
 
 .cursor-pointer {
   cursor: pointer;
 }
 
-/* 🏛️ 5. MINIMALIST LINKS UNDERLINE INTERACTION INTERFACE */
+/* 🏛️ 5. NAVIGATION MENU INK HIGHLIGHT ANIMATIONS */
 .nav-editorial-link {
-  letter-spacing: 3px !important;
+  letter-spacing: 2px !important;
   position: relative;
-  opacity: 0.6;
+  opacity: 0.65;
   transition: opacity 0.4s ease;
 }
 
@@ -55,9 +58,9 @@ body {
   width: 100%;
   transform: scaleX(0);
   height: 1px;
-  bottom: -5px;
+  bottom: -4px;
   left: 0;
-  background-color: var(--gold);
+  background-color: var(--willow-slate);
   transform-origin: bottom right;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -67,112 +70,74 @@ body {
   transform-origin: bottom left;
 }
 
-/* 🛍️ 6. BOUTIQUE BAG SPRING TRANSITIONS */
+/* 🛍️ 6. THE MAGNETIC BOUTIQUE SPRING COMPONENT EFFECT */
 .magnetic-bag {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .magnetic-bag:hover {
-  transform: scale(1.18) rotate(-6deg);
+  transform: scale(1.15) rotate(-4deg);
 }
 
-/* 🎬 7. SECTION 1 MOUTH-OPEN INTRO ANIMATION STYLE RULES */
+/* 🎬 7. SECTION 1 ELEVATED HERO WITH IMMERSIVE PARALLAX EFFECTS */
+
+.parallax-hero {
+  /* Added ./ to point correctly inside your local src/public/image folder */
+ 
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+
+
 .hero-title {
-  font-size: clamp(3.5rem, 11vw, 8rem);
-  font-weight: 700;
-  line-height: 0.95;
-  animation: elegantFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--charcoal-ink);
+  animation: elegantRevealUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes elegantFadeUp {
+@keyframes elegantRevealUp {
   from {
     opacity: 0;
-    transform: translateY(60px) skewY(2deg);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) skewY(0);
+    transform: translateY(0);
   }
 }
 
-/* 🖼️ 8. SECTION 2 ASYMMETRIC GRID MICRO-ANIMATIONS */
-.gallery-card {
-  border: 1px solid rgba(0, 0, 0, 0.02);
+/* 🖼️ 8. GALLERY & WORKSHOP CONTENT CONTAINER INTERACTIONS */
+.gallery-card, .booking-card, .shop-card {
+  border: 1px solid rgba(0, 0, 0, 0.015) !important;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.img-wrapper {
+.img-wrapper, .shop-img-wrapper {
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.gallery-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06) !important;
+.gallery-card:hover, .booking-card:hover, .shop-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(43, 43, 43, 0.04) !important;
 }
 
 .gallery-card:hover .img-wrapper {
-  transform: scale(1.04);
-}
-/* 🏛️ SECTION 3: BOOKING CARD REFINEMENTS */
-.booking-card {
-  border: 1px solid rgba(0, 0, 0, 0.01) !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.booking-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.05) !important;
 }
 
 .style-badge {
   font-size: 0.65rem !important;
-  letter-spacing: 2px !important;
+  letter-spacing: 1.5px !important;
   font-family: 'Inter', sans-serif;
-  background-color: var(--charcoal) !important;
-}
-/* 🛍️ SECTION 4: LUXURY SHOP INTERACTION PLUGINS */
-.shop-card {
-  border: 1px solid rgba(0, 0, 0, 0.02) !important;
-  transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: var(--charcoal-ink) !important;
 }
 
-.shop-img-wrapper {
-  transition: background-color 0.4s ease;
-}
-
-.shop-card:hover {
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05) !important;
-}
-
-.shop-card .btn-dark {
-  background-color: var(--charcoal);
-  border: none;
-  opacity: 0.9;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-
-.shop-card .btn-dark:hover {
-  opacity: 1;
-  background-color: var(--gold) !important;
-}
-/* 📖 SECTION 5 & 6: BRAND MANIFESTO + VIDEO RULES */
-.manifesto-frame {
-  border: 1px solid rgba(0, 0, 0, 0.02) !important;
-}
-
-.video-container {
-  border: 1px solid rgba(0, 0, 0, 0.02) !important;
-}
-
-.play-btn-glow {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
-}
-
-.video-overlay-play:hover .play-btn-glow {
-  transform: scale(1.1);
-  color: var(--gold) !important;
-}
-/* 📸📸 SECTION 7 & 8: INSTAGRAM MATRIX & FOOTER REFINEMENTS */
+/* 📸 9. INTERACTIVE INSTAGRAM MATRIX */
 .instagram-card {
   border: 1px solid rgba(0, 0, 0, 0.02) !important;
 }
@@ -182,7 +147,7 @@ body {
 }
 
 .instagram-card:hover .wrapper-box {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .instagram-card:hover .insta-hover-overlay {
@@ -193,28 +158,24 @@ body {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Custom form corrections for footer elements */
-input::placeholder {
-  color: rgba(249, 247, 242, 0.3) !important;
-}
-/* ✨ UTILITY LAYER BUTTONS & PANEL SCHEMATICS */
+/* 🔮 10. FIXED CONTROLS, UTILITY ARROWS, & SIDEBAR DRAWER OVERRIDES */
 .btn-scroll-top, .btn-ai-assistant {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50% !important;
   border: none;
-  background-color: var(--charcoal);
-  color: var(--linen);
-  font-size: 1.2rem;
+  background-color: var(--charcoal-ink);
+  color: var(--gallery-white);
+  font-size: 1.1rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-scroll-top {
-  background-color: white;
-  color: var(--charcoal);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--gallery-white);
+  color: var(--charcoal-ink);
+  border: 1px solid var(--neutral-linen);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(15px);
   pointer-events: none;
 }
 
@@ -225,15 +186,14 @@ input::placeholder {
 }
 
 .btn-ai-assistant {
-  background-color: var(--gold);
+  background-color: var(--charcoal-ink);
 }
 
 .btn-scroll-top:hover, .btn-ai-assistant:hover {
-  transform: scale(1.1) translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06) !important;
 }
 
-/* 🔮 AI SIDEBAR DRAWER STYLES */
 .ai-drawer-panel {
   transform: translateX(100%);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -244,11 +204,12 @@ input::placeholder {
 }
 
 .ai-msg {
-  border-left: 3px solid var(--gold) !important;
-  border-radius: 0px 8px 8px 0px;
-  line-height: 1.5;
+  border-left: 2px solid var(--willow-slate) !important;
+  border-radius: 0px 4px 4px 0px;
+  line-height: 1.6;
 }
 
-/* Fixed Positions Adjustments */
+/* Coordinate Adjusters */
 .bottom-4 { bottom: 2rem !important; }
 .end-4 { right: 2rem !important; }
+input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
