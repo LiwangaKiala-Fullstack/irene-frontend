@@ -44,18 +44,21 @@ import { HttpClient } from '@angular/common/http';
 
     <main style="padding-top: 0;">
       <!-- 🎬 SECTION 1: HERO PARALLAX REVEAL CONTAINER -->
+            <!-- 🎬 SECTION 1: HERO PARALLAX REVEAL CONTAINER -->
+            <!-- 🎬 SECTION 1: HERO PARALLAX REVEAL CONTAINER -->
       <section id="home" class="vh-100 d-flex align-items-center justify-content-center text-center px-4 parallax-hero" 
-               style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('public/image/a passion for creativity.jpg');">
+               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg');">
         <div>
-          <h1 class="hero-title serif mb-5">
+          <h1 class="hero-title serif mb-5" style="text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
             A Passion for <br>
             <span class="fst-italic willow">Creativity</span>
           </h1>
-          <a href="#classes" class="btn btn-outline-dark rounded-0 px-5 py-3 text-uppercase fw-bold" style="letter-spacing: 2px; font-size: 0.8rem; text-decoration: none;">
+          <a href="#classes" class="btn btn-dark rounded-0 px-5 py-3 text-uppercase fw-bold shadow-sm" style="letter-spacing: 2px; font-size: 0.8rem; text-decoration: none;">
             Book Class ⟶
           </a>
         </div>
       </section>
+
 
       <!-- 🖼️ SECTION 2: THE FINE ART GALLERY GRID -->
       <section id="gallery" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px; position: relative; z-index: 10;">

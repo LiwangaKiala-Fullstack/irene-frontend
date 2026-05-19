@@ -80,15 +80,31 @@ body {
 }
 
 /* 🎬 7. SECTION 1 ELEVATED HERO WITH IMMERSIVE PARALLAX EFFECTS */
-
+/* 🎬 7. SECTION 1 ELEVATED HERO WITH IMMERSIVE PARALLAX EFFECTS */
+/* 🎬 7. SECTION 1 ELEVATED HERO WITH IMMERSIVE PARALLAX EFFECTS */
+/* 🎬 7. SECTION 1 ELEVATED HERO WITH PERFECTLY BALANCED BACKGROUND SIZING */
 .parallax-hero {
-  /* Added ./ to point correctly inside your local src/public/image folder */
- 
+  height: 100vh !important;
+  width: 100% !important;
   background-attachment: fixed !important;
-  background-position: center !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
-  background-size: cover !important;
+  /* 🌾 THE PERFECT MID-POINT: Forces the image to fill the exact width (100%) 
+     while allowing the height to adjust naturally to prevent extreme zooming! */
+  background-size: 100% auto !important; 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Fallback optimization for vertical mobile screen dimensions */
+@media (max-width: 991px) {
+  .parallax-hero {
+    background-size: cover !important; /* Retains seamless portrait framing on smaller handheld screens */
+  }
+}
+
 
 
 
