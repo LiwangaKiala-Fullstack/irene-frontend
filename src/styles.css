@@ -229,3 +229,46 @@ body {
 .bottom-4 { bottom: 2rem !important; }
 .end-4 { right: 2rem !important; }
 input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
+
+/* ✨ ADDICTIVE INTERACTION ARCHITECTURE */
+.booking-card {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.4s ease !important;
+}
+
+/* Premium card hover state lifting effect */
+.booking-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(43, 43, 43, 0.06) !important;
+  background-color: #FFFFFF !important;
+}
+
+/* Slick dynamic magnetic responses for buttons */
+.dynamic-btn, .dynamic-cta {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s ease, 
+              letter-spacing 0.3s ease !important;
+}
+
+.dynamic-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  letter-spacing: 3px !important;
+  background-color: var(--charcoal-ink) !important;
+  color: white !important;
+}
+
+.dynamic-cta:hover {
+  transform: scale(1.04);
+  letter-spacing: 4px !important;
+}
+
+/* Gentle image reveal transition rules */
+.img-wrapper img, .booking-card img {
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.gallery-card:hover .img-wrapper img, 
+.booking-card:hover img {
+  transform: scale(1.05);
+}
