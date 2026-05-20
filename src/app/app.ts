@@ -259,7 +259,8 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4">
-          @for (item of; track item) {
+         @for (item of [1, 2, 3, 4]; track item) {
+
             <div class="col-6 col-lg-3">
               <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
                 <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; background-color: #FAF9F6 !important;">
