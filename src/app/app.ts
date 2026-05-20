@@ -43,25 +43,30 @@ import { HttpClient } from '@angular/common/http';
     </nav>
 
     <main style="padding-top: 0;">
-      <!-- 🎬 SECTION 1: HERO PARALLAX REVEAL CONTAINER -->
-      <section id="home" class="vh-100 d-flex align-items-center justify-content-center text-center px-4 parallax-hero" 
-               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg');">
+      <!-- 🎬 SECTION 1: HERO CONTAINER - PUSHED DOWN WITH DYNAMIC ALIGNMENT -->
+      <section id="home" class="vh-100 d-flex align-items-end justify-content-center text-center px-4 parallax-hero" 
+               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg'); padding-bottom: 12vh;">
         <div>
-          <!-- Scaled down the title style parameters gracefully to avoid overwhelming text sizes -->
-          <h1 class="serif mb-5" style="font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.2; color: #2B2B2B; text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
+          <h1 class="serif mb-4" style="font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.2; color: #2B2B2B; text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
             A Passion for <br>
             <span class="fst-italic willow">Creativity</span>
           </h1>
-          <a href="#classes" class="btn btn-dark rounded-0 px-5 py-3 text-uppercase fw-bold shadow-sm" style="letter-spacing: 2px; font-size: 0.8rem; text-decoration: none;">
-            Book Class ⟶
-          </a>
+          <!-- Modern Hyper-Animated Circle Booking Target Trigger Button -->
+          <div class="d-flex justify-content-center mt-3">
+            <a href="#classes" class="btn-circle-cta shadow-sm text-uppercase text-decoration-none d-flex flex-column align-items-center justify-content-center">
+              <span class="btn-text-main font-monospace">Book</span>
+              <span class="btn-text-sub font-monospace">Class</span>
+              <i class="bi bi-arrow-down mt-1 fs-6"></i>
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- 🖼️ SECTION 2: THE FINE ART GALLERY GRID (Framed Paintings - Full Display) -->
+      <!-- 🖼️ SECTION 2: THE FINE ART GALLERY GRID (Centered Header Blocks Layout) -->
       <section id="gallery" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
-          <div class="col-12 text-start">
+          <!-- Transformed grid headers to clean text-center orientation blocks -->
+          <div class="col-12 text-center">
             <span class="text-uppercase small willow ls-5 d-block mb-2">Selected Portfolios</span>
             <h2 class="serif display-5 fw-light">Original Paintings & Illustrations</h2>
           </div>
@@ -69,7 +74,6 @@ import { HttpClient } from '@angular/common/http';
         <div class="row g-5 align-items-center">
           <div class="col-12 col-lg-7">
             <div class="gallery-card overflow-hidden bg-white p-3 shadow-sm">
-              <!-- Changed to object-fit-contain to fully display the entire uncropped image structure -->
               <div class="img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center" style="height: 55vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-contain" alt="Framed original artwork">
               </div>
@@ -93,19 +97,18 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE (Painting Parties - Full Display) -->
+      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE -->
       <section id="classes" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
-          <div class="col-12 text-start">
+          <div class="col-12 text-center">
             <span class="text-uppercase small willow ls-5 d-block mb-2">Art Instruction</span>
             <h2 class="serif display-5 fw-light">Creative Classes & Workshops</h2>
           </div>
         </div>
         <div class="row g-4">
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 52vh;">
-              <!-- Switched step container to display full width/height profiles uncropped -->
-              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 22vh; background-color: #FAF9F6 !important;">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 62vh;">
+              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 26vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-contain" alt="Painting class party session">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
@@ -117,17 +120,17 @@ import { HttpClient } from '@angular/common/http';
                   <h3 class="serif h4 fw-light mb-2">Watercolour Painting Parties</h3>
                   <p class="text-secondary small mb-0">Discover soft washes and color blending options in a social, welcoming community workspace.</p>
                 </div>
-                <div class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
                   <span class="small text-muted"><i class="bi bi-geo-alt me-2"></i>Carshalton Studio</span>
-                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-1">Book Slot</button>
+                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 52vh;">
-              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 22vh; background-color: #FAF9F6 !important;">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 62vh;">
+              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 26vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-contain" alt="Ink & illustration class setting">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
@@ -139,18 +142,18 @@ import { HttpClient } from '@angular/common/http';
                   <h3 class="serif h4 fw-light mb-2">Ink & Illustration Classes</h3>
                   <p class="text-secondary small mb-0">Focusing on capturing delicate line-work textures, character concepts, and narrative techniques.</p>
                 </div>
-                <div class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
                   <span class="small text-muted"><i class="bi bi-clock me-2"></i>Weekly Blocks</span>
-                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-1">Book Slot</button>
+                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 52vh;">
-              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 22vh;">
-                <i class="bi bi-bookmark-heart text-muted display-4 opacity-25"></i>
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 62vh;">
+              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 26vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-9.jpg" class="w-100 h-100 object-fit-contain" alt="Private studio mentoring session">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div>
@@ -161,9 +164,9 @@ import { HttpClient } from '@angular/common/http';
                   <h3 class="serif h4 fw-light mb-2">Private Studio Mentoring</h3>
                   <p class="text-secondary small">One-on-one tailored private tutorial blocks designed explicitly around personalized portfolio development plans.</p>
                 </div>
-                <div class="border-top pt-3 mt-2 d-flex justify-content-between align-items-center">
+                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
                   <span class="small text-muted"><i class="bi bi-person-fill me-2"></i>1-on-1 Mentorship</span>
-                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-1">Book Slot</button>
+                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
                 </div>
               </div>
             </div>
@@ -171,10 +174,10 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🛍️ SECTION 4: THE ART SHOP ORIGINAL SELECTIONS (Handmade Earrings - Full Display) -->
+      <!-- 🛍️ SECTION 4: THE ART SHOP ORIGINAL SELECTIONS -->
       <section id="shop" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px;">
         <div class="row mb-5 pt-5">
-          <div class="col-12 text-start">
+          <div class="col-12 text-center">
             <span class="text-uppercase small willow ls-5 d-block mb-2">Online Shop</span>
             <h2 class="serif display-5 fw-light">Acquire Original Artworks & Crafts</h2>
           </div>
@@ -220,7 +223,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 📖 SECTION 5: THE BIOGRAPHY STATEMENT (Mural Project - Full Display) -->
+      <!-- 📖 SECTION 5: THE BIOGRAPHY STATEMENT -->
       <section id="about" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px;">
         <div class="row align-items-center py-5">
           <div class="col-12 col-lg-6 pe-lg-5 mb-5 mb-lg-0">
@@ -247,16 +250,16 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 📸 SECTION 7: THE INSTAGRAM LIVE MEDIA MATRICES (Diary Stream - Full Display) -->
+      <!-- 📸 SECTION 7: THE INSTAGRAM LIVE MEDIA MATRICES -->
       <section id="social-feed" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF;">
         <div class="row mb-5 pt-4">
-          <div class="col-12 text-start">
+          <div class="col-12 text-center">
             <span class="text-uppercase small willow ls-5 d-block mb-2">Studio Diary</span>
             <h2 class="serif display-5 fw-light">Latest Illustrations & Updates</h2>
           </div>
         </div>
         <div class="row g-4">
-          @for (item of [1,2,3,4]; track item) {
+          @for (item of; track item) {
             <div class="col-6 col-lg-3">
               <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
                 <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; background-color: #FAF9F6 !important;">
