@@ -43,7 +43,7 @@ import { HttpClient } from '@angular/common/http';
     </nav>
 
     <main style="padding-top: 0;">
-      <!-- 🎬 SECTION 1: HERO CONTAINER - PUSHED DOWN WITH DYNAMIC ALIGNMENT -->
+      <!-- 🎬 SECTION 1: HERO PARALLAX CONTAINER -->
       <section id="home" class="vh-100 d-flex align-items-end justify-content-center text-center px-4 parallax-hero" 
                style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg'); padding-bottom: 12vh;">
         <div>
@@ -51,7 +51,6 @@ import { HttpClient } from '@angular/common/http';
             A Passion for <br>
             <span class="fst-italic willow">Creativity</span>
           </h1>
-          <!-- Modern Hyper-Animated Circle Booking Target Trigger Button -->
           <div class="d-flex justify-content-center mt-3">
             <a href="#classes" class="btn-circle-cta shadow-sm text-uppercase text-decoration-none d-flex flex-column align-items-center justify-content-center">
               <span class="btn-text-main font-monospace">Book</span>
@@ -62,35 +61,64 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🖼️ SECTION 2: THE FINE ART GALLERY GRID (Centered Header Blocks Layout) -->
+      <!-- 🖼️ SECTION 2: Interactive Virtual Gallery Studio -->
       <section id="gallery" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px; position: relative; z-index: 10;">
-        <div class="row mb-5 pt-5">
-          <!-- Transformed grid headers to clean text-center orientation blocks -->
+        <div class="row mb-4 pt-5">
           <div class="col-12 text-center">
-            <span class="text-uppercase small willow ls-5 d-block mb-2">Selected Portfolios</span>
-            <h2 class="serif display-5 fw-light">Original Paintings & Illustrations</h2>
+            <span class="text-uppercase small willow ls-5 d-block mb-2">Virtual Exhibition</span>
+            <h2 class="serif display-5 fw-light mb-3">Original Paintings & Illustrations</h2>
           </div>
         </div>
-        <div class="row g-5 align-items-center">
+
+        <!-- 🎨 LIVE INTERACTIVE FRAME CONFIGURATOR PICKER -->
+        <div class="row mb-5 justify-content-center">
+          <div class="col-auto bg-light p-3 border shadow-sm rounded-0 d-flex align-items-center gap-4">
+            <span class="small font-monospace text-uppercase willow mb-0">Select Gallery Frame Color:</span>
+            <div class="d-flex gap-3">
+              <button (click)="changeFrame('#D9C3A5', 'Natural Oak')" class="swatch-btn" style="background-color: #D9C3A5;" title="Natural Oak"></button>
+              <button (click)="changeFrame('#5C4033', 'Elegant Walnut')" class="swatch-btn" style="background-color: #5C4033;" title="Elegant Walnut"></button>
+              <button (click)="changeFrame('#1C1C1C', 'Minimalist Charcoal')" class="swatch-btn" style="background-color: #1C1C1C;" title="Minimalist Charcoal"></button>
+              <button (click)="changeFrame('#EAEAEA', 'Gallery White')" class="swatch-btn" style="background-color: #EAEAEA;" title="Gallery White"></button>
+            </div>
+            <span class="small font-monospace text-dark fw-bold mb-0 text-uppercase ls-2">Style: {{ currentFrameName }}</span>
+          </div>
+        </div>
+
+        <div class="row g-5 align-items-start">
+          <!-- Artwork Card 1: Woman with the mask -->
           <div class="col-12 col-lg-7">
-            <div class="gallery-card overflow-hidden bg-white p-3 shadow-sm">
-              <div class="img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center" style="height: 55vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-contain" alt="Framed original artwork">
+            <div class="gallery-card bg-white p-2">
+              <!-- Virtual Dynamic Frame Wrapper -->
+              <div class="museum-frame p-4 shadow d-flex align-items-center justify-content-center" 
+                   [style.border-color]="currentFrameColor" 
+                   style="height: 55vh; border-style: solid; background-color: #FFFFFF;">
+                <div class="img-wrapper overflow-hidden w-100 h-100">
+                  <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-contain" alt="Woman with the mask painting">
+                </div>
               </div>
-              <div class="d-flex justify-content-between mt-3 px-2">
-                <span class="serif fw-normal text-uppercase tracking-wider">Watercolour & Ink Studies</span>
-                <span class="text-muted small">Carshalton Collection</span>
+              <!-- Text Details placed cleanly right beneath the frame -->
+              <div class="mt-3 px-2 text-start">
+                <h3 class="serif h4 mb-1 text-dark tracking-wide">Woman with the mask</h3>
+                <span class="willow small font-monospace text-uppercase tracking-wider">Carshalton Collection — Original Watercolour</span>
               </div>
             </div>
           </div>
+
+          <!-- Artwork Card 2: The forest -->
           <div class="col-12 col-lg-5">
-            <div class="gallery-card overflow-hidden bg-white p-3 shadow-sm">
-              <div class="img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center" style="height: 70vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-contain" alt="Nature inspired painting series">
+            <div class="gallery-card bg-white p-2">
+              <!-- Virtual Dynamic Frame Wrapper -->
+              <div class="museum-frame p-4 shadow d-flex align-items-center justify-content-center" 
+                   [style.border-color]="currentFrameColor" 
+                   style="height: 70vh; border-style: solid; background-color: #FFFFFF;">
+                <div class="img-wrapper overflow-hidden w-100 h-100">
+                  <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-contain" alt="The forest landscape painting">
+                </div>
               </div>
-              <div class="d-flex justify-content-between mt-3 px-2">
-                <span class="serif fw-normal text-uppercase tracking-wider">Nature Inspired Series</span>
-                <span class="text-muted small">Fine Art Print</span>
+              <!-- Text Details placed cleanly right beneath the frame -->
+              <div class="mt-3 px-2 text-start">
+                <h3 class="serif h4 mb-1 text-dark tracking-wide">The forest</h3>
+                <span class="willow small font-monospace text-uppercase tracking-wider">Fine Art Print — Surrey Series</span>
               </div>
             </div>
           </div>
@@ -259,8 +287,7 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4">
-         @for (item of [1, 2, 3, 4]; track item) {
-
+          @for (item of [1,2,3,4]; track item) {
             <div class="col-6 col-lg-3">
               <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
                 <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; background-color: #FAF9F6 !important;">
@@ -349,6 +376,10 @@ export class App implements OnInit {
   isAiPanelOpen = false;
   cartCount = 0;
   backendProducts: any[] = [];
+  
+  // 🎨 Default State for Interactive Virtual Framing Customizer
+  currentFrameColor = '#D9C3A5';
+  currentFrameName = 'Natural Oak';
 
   ngOnInit() {
     this.fetchBackendProducts();
@@ -363,6 +394,11 @@ export class App implements OnInit {
         console.log('Standby configuration active.');
       }
     });
+  }
+
+  changeFrame(color: string, name: string) {
+    this.currentFrameColor = color;
+    this.currentFrameName = name;
   }
 
   addToBag() {

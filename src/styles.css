@@ -309,3 +309,43 @@ input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
 .align-items-end {
   align-items: flex-end !important; /* Adjusts vector grid height distribution down */
 }
+/* 🏛️ PREMIUM GALLERY EXHIBITION FRAMING MECHANICS */
+.museum-frame {
+  background-color: var(--gallery-white);
+  border: 1px solid rgba(43, 43, 43, 0.15) !important;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.02), 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Elegant shadow lifting effect on hovering her framed collections */
+.gallery-card:hover .museum-frame {
+  transform: scale(1.005) translateY(-3px);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.01), 0 25px 50px rgba(43, 43, 43, 0.05) !important;
+  border-color: rgba(43, 43, 43, 0.3) !important;
+}
+
+/* 🏛️ INTERACTIVE FRAME SELECTOR BUTTON ARCHITECTURE */
+.swatch-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50% !important;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.swatch-btn:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 2px var(--charcoal-ink);
+}
+
+/* 🖼️ INTERACTIVE HIGH-END FRAME PHYSICS LAYER */
+.museum-frame {
+  /* Dynamic 18px thick luxury solid structural wood layout boundary matting */
+  border-width: 18px !important; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06), inset 0 0 10px rgba(0, 0, 0, 0.05) !important;
+  transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
