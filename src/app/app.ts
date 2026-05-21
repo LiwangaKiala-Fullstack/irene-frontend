@@ -44,10 +44,8 @@ import { HttpClient } from '@angular/common/http';
 
     <main style="padding-top: 0;">
       <!-- 🎬 SECTION 1: HERO PARALLAX CONTAINER -->
-            <!-- 🎬 SECTION 1: HERO PARALLAX CONTAINER -->
       <section id="home" class="vh-100 d-flex align-items-end justify-content-center text-center px-4 parallax-hero" 
-               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/image/a passion for creativity.jpg'); padding-bottom: 12vh;">
-
+               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg'); padding-bottom: 12vh;">
         <div>
           <h1 class="serif mb-4" style="font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.2; color: #2B2B2B; text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
             A Passion for <br>
@@ -87,7 +85,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
 
         <div class="row g-5 align-items-start justify-content-center">
-          <!-- Artwork Card 1: Woman with the mask (Scaled up to 80vh height with zero gap boundaries) -->
+          <!-- Artwork Card 1: Woman with the mask -->
           <div class="col-12 col-lg-7">
             <div class="gallery-card bg-white p-0">
               <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
@@ -104,7 +102,7 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
-          <!-- Artwork Card 2: The forest (Perfect height pairing with zero inner gaps) -->
+          <!-- Artwork Card 2: The forest -->
           <div class="col-12 col-lg-5">
             <div class="gallery-card bg-white p-0">
               <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
@@ -123,7 +121,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE (Uniform Height & Fashion Price Layouts) -->
+      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE (Images Expanded to 38vh, Cards to 72vh) -->
       <section id="classes" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-center">
@@ -134,15 +132,15 @@ import { HttpClient } from '@angular/common/http';
         <div class="row g-4 justify-content-center">
           <!-- Workshop Card 1 -->
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 60vh;">
-              <div class="position-relative overflow-hidden w-100" style="height: 28vh; background-color: #FAF9F6 !important;">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
+              <!-- 📐 Image container expanded to exactly 38vh -->
+              <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-cover" alt="Painting class party session">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div>
                   <div class="d-flex justify-content-between align-items-baseline mb-2">
                     <h3 class="serif h4 fw-light mb-0">Watercolour Painting Parties</h3>
-                    <!-- Premium Editorial Fashion Pricing presentation -->
                     <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£45.00</span>
                   </div>
                   <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-secondary text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">Group Event</span>
@@ -158,8 +156,9 @@ import { HttpClient } from '@angular/common/http';
 
           <!-- Workshop Card 2 -->
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 60vh;">
-              <div class="position-relative overflow-hidden w-100" style="height: 28vh; background-color: #FAF9F6 !important;">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
+              <!-- 📐 Image container expanded to exactly 38vh -->
+              <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-cover" alt="Ink & illustration class setting">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
@@ -181,8 +180,9 @@ import { HttpClient } from '@angular/common/http';
 
           <!-- Workshop Card 3 -->
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 60vh;">
-              <div class="position-relative overflow-hidden w-100" style="height: 28vh; background-color: #FAF9F6 !important;">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
+              <!-- 📐 Image container expanded to exactly 38vh -->
+              <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-9.jpg" class="w-100 h-100 object-fit-cover" alt="Private studio mentoring session">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
@@ -387,7 +387,6 @@ export class App implements OnInit {
   cartCount = 0;
   backendProducts: any[] = [];
   
-  // Dynamic default state hooks for your customized virtual frames setup
   currentFrameColor = '#D9C3A5';
   currentFrameName = 'Natural Oak';
 
@@ -432,3 +431,4 @@ export class App implements OnInit {
     this.isAiPanelOpen = !this.isAiPanelOpen;
   }
 }
+

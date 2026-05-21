@@ -1,52 +1,87 @@
-/* 🏛️ 1. LIBRARIES & GLOBAL SETUP */
+/* 🏛️ 1. CORE ENGINE FRAMEWORK ASSET IMPORTS */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
+/* 🌾 2. THE BRAND MINIMALIST NATURAL PALETTE VARIABLES */
 :root {
   --gallery-white: #FFFFFF;
-  --soft-wash-bg: #FCFAF7;
-  --neutral-linen: #F4F1EA;
-  --charcoal-ink: #2B2B2B;
-  --willow-slate: #7A7875;
+  --soft-wash-bg: #FCFAF7;       
+  --neutral-linen: #F4F1EA;      
+  --charcoal-ink: #2B2B2B;       
+  --willow-slate: #7A7875;       
 }
 
+/* 🪐 3. GLOBAL SCREEN LAYOUT ENVIRONMENT */
 body {
   background-color: var(--gallery-white) !important;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, sans-serif;
   color: var(--charcoal-ink);
   margin: 0;
+  padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-.serif { font-family: 'Playfair Display', Georgia, serif !important; color: var(--charcoal-ink) !important; }
-.ls-5 { letter-spacing: 4px !important; }
-.willow { color: var(--willow-slate) !important; }
-.cursor-pointer { cursor: pointer; }
+/* 🏛️ 4. EDITORIAL LOGO & NAVIGATION BRAND LAYOUT STYLES */
+.serif { 
+  font-family: 'Playfair Display', Georgia, serif !important; 
+  color: var(--charcoal-ink) !important;
+}
 
-/* 🏛️ 2. NAVBAR NAVIGATION LINKS */
+.ls-5 { 
+  letter-spacing: 4px !important; 
+}
+
+.willow { 
+  color: var(--willow-slate) !important; 
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* 🏛️ 5. NAVIGATION MENU INK HIGHLIGHT ANIMATIONS */
 .nav-editorial-link {
   letter-spacing: 2px !important;
   position: relative;
   opacity: 0.65;
   transition: opacity 0.4s ease;
 }
-.nav-editorial-link:hover { opacity: 1; }
-.nav-editorial-link::after {
-  content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px; bottom: -4px; left: 0;
-  background-color: var(--willow-slate); transform-origin: bottom right; transition: transform 0.4s ease;
+
+.nav-editorial-link:hover {
+  opacity: 1;
 }
-.nav-editorial-link:hover::after { transform: scaleX(1); transform-origin: bottom left; }
-.magnetic-bag { transition: transform 0.5s ease; }
-.magnetic-bag:hover { transform: scale(1.15) rotate(-4deg); }
 
-/* 🎬 3. PARALLAX HERO SECTION */
+.nav-editorial-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--willow-slate);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-  /* 🎬 7. SECTION 1 ELEVATED HERO WITH IMMERSIVE PARALLAX EFFECTS */
+.nav-editorial-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 🛍️ 6. THE MAGNETIC BOUTIQUE SPRING COMPONENT EFFECT */
+.magnetic-bag {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.magnetic-bag:hover {
+  transform: scale(1.15) rotate(-4deg);
+}
+
+/* 🎬 7. SECTION 1 ELEVATED HERO WITH IMMERSIVE PARALLAX EFFECTS */
 .parallax-hero {
-  height: 100vh !important;
-  width: 100% !important;
-  background-attachment: fixed !important;
+  background-attachment: fixed !important; 
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: 100% auto !important; 
@@ -55,3 +90,159 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.hero-title {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--charcoal-ink);
+  animation: elegantRevealUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes elegantRevealUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎨 8. EXHIBITION MUSEUM FRAMING MATRICES (28px Bold Custom Sizing) */
+.museum-frame {
+  border-width: 28px !important; /* 👈 EXPANDED BOLD WIDTH VALUE FOR MAXIMUM COLOR IMPACT */
+  border-style: solid !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 
+              inset 0 0 0 4px #FAF9F6, /* 🏛️ LUXURY WHITE INNER MATTING LINER */
+              inset 0 0 20px rgba(0, 0, 0, 0.08) !important;
+  transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #FFFFFF;
+}
+
+.gallery-card:hover .museum-frame {
+  transform: scale(1.01) translateY(-4px);
+  box-shadow: 0 40px 80px rgba(43, 43, 43, 0.16),
+              inset 0 0 0 4px #FAF9F6,
+              inset 0 0 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* 🏛️ INTERACTIVE COLOR SWATCH PICKER ACCESSORIES */
+.swatch-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50% !important;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.swatch-btn:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px var(--charcoal-ink);
+}
+
+/* 🌿 9. ADDICTIVE CARDS & COMPONENT PACKAGING STRUCTURES */
+.booking-card, .shop-card {
+  border: 1px solid rgba(0, 0, 0, 0.015) !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.4s ease !important;
+}
+
+.booking-card:hover, .shop-card:hover {
+  transform: translateY(-8px) scale(1.005);
+  box-shadow: 0 30px 60px rgba(43, 43, 43, 0.05) !important;
+  background-color: #FFFFFF !important;
+}
+
+.style-badge {
+  font-size: 0.65rem !important;
+  letter-spacing: 1.5px !important;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--charcoal-ink) !important;
+}
+
+/* 🛍️ 10. HIGH-ANIMATED HERO CIRCLE TRIGGER DESIGN */
+.btn-circle-cta {
+  width: 105px;
+  height: 105px;
+  border-radius: 50% !important;
+  background-color: var(--charcoal-ink);
+  color: var(--gallery-white) !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--charcoal-ink);
+}
+
+.btn-circle-cta:hover {
+  background-color: var(--gallery-white);
+  color: var(--charcoal-ink) !important;
+  transform: scale(1.1) translateY(4px);
+  box-shadow: 0 15px 30px rgba(43, 43, 43, 0.1) !important;
+}
+
+.btn-circle-cta .btn-text-main { font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; }
+.btn-circle-cta .btn-text-sub { font-size: 0.65rem; opacity: 0.7; }
+
+/* 📸 11. SOCIAL MEDIA STREAM COMPONENT STYLES */
+.instagram-card { border: 1px solid rgba(0, 0, 0, 0.02) !important; }
+.wrapper-box { transition: transform 0.5s ease; }
+.instagram-card:hover .wrapper-box { transform: scale(1.01); }
+.instagram-card:hover .insta-hover-overlay { opacity: 1 !important; }
+.transition-all { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* 🔮 12. UTILITY SCROLL ESCALATORS & AI SIDEBAR CONFIGURATIONS */
+.btn-scroll-top, .btn-ai-assistant {
+  width: 48px;
+  height: 48px;
+  border-radius: 50% !important;
+  border: none;
+  background-color: var(--charcoal-ink);
+  color: var(--gallery-white);
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-scroll-top {
+  background-color: var(--gallery-white);
+  color: var(--charcoal-ink);
+  border: 1px solid var(--neutral-linen);
+  opacity: 0;
+  transform: translateY(15px);
+  pointer-events: none;
+}
+
+.btn-scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.btn-scroll-top:hover, .btn-ai-assistant:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06) !important;
+}
+
+.ai-drawer-panel {
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-drawer-panel.open {
+  transform: translateX(0) !important;
+}
+
+.ai-msg {
+  border-left: 2px solid var(--willow-slate) !important;
+  border-radius: 0px 4px 4px 0px;
+  line-height: 1.6;
+}
+
+/* Base Dimensions */
+.bottom-4 { bottom: 2rem !important; }
+.end-4 { right: 2rem !important; }
+input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
+
