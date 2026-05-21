@@ -88,7 +88,6 @@ import { HttpClient } from '@angular/common/http';
           <!-- Artwork Card 1: Woman with the mask -->
           <div class="col-12 col-lg-7">
             <div class="gallery-card bg-white p-2">
-              <!-- Virtual Dynamic Frame Wrapper -->
               <div class="museum-frame p-4 shadow d-flex align-items-center justify-content-center" 
                    [style.border-color]="currentFrameColor" 
                    style="height: 55vh; border-style: solid; background-color: #FFFFFF;">
@@ -96,7 +95,6 @@ import { HttpClient } from '@angular/common/http';
                   <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-contain" alt="Woman with the mask painting">
                 </div>
               </div>
-              <!-- Text Details placed cleanly right beneath the frame -->
               <div class="mt-3 px-2 text-start">
                 <h3 class="serif h4 mb-1 text-dark tracking-wide">Woman with the mask</h3>
                 <span class="willow small font-monospace text-uppercase tracking-wider">Carshalton Collection — Original Watercolour</span>
@@ -107,7 +105,6 @@ import { HttpClient } from '@angular/common/http';
           <!-- Artwork Card 2: The forest -->
           <div class="col-12 col-lg-5">
             <div class="gallery-card bg-white p-2">
-              <!-- Virtual Dynamic Frame Wrapper -->
               <div class="museum-frame p-4 shadow d-flex align-items-center justify-content-center" 
                    [style.border-color]="currentFrameColor" 
                    style="height: 70vh; border-style: solid; background-color: #FFFFFF;">
@@ -115,7 +112,6 @@ import { HttpClient } from '@angular/common/http';
                   <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-contain" alt="The forest landscape painting">
                 </div>
               </div>
-              <!-- Text Details placed cleanly right beneath the frame -->
               <div class="mt-3 px-2 text-start">
                 <h3 class="serif h4 mb-1 text-dark tracking-wide">The forest</h3>
                 <span class="willow small font-monospace text-uppercase tracking-wider">Fine Art Print — Surrey Series</span>
@@ -150,7 +146,7 @@ import { HttpClient } from '@angular/common/http';
                 </div>
                 <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
                   <span class="small text-muted"><i class="bi bi-geo-alt me-2"></i>Carshalton Studio</span>
-                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
+                  <button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
                 </div>
               </div>
             </div>
@@ -165,14 +161,14 @@ import { HttpClient } from '@angular/common/http';
                 <div>
                   <div class="d-flex justify-content-between align-items-center mb-2">
                     <span class="badge rounded-0 text-uppercase tracking-wider px-3 py-1 bg-dark text-white style-badge">All Levels</span>
-                    <span class="serif text-dark fw-normal fs-5">£35</span>
+                    <span class="serif text-dark fw-normal fs-4">£35</span>
                   </div>
                   <h3 class="serif h4 fw-light mb-2">Ink & Illustration Classes</h3>
                   <p class="text-secondary small mb-0">Focusing on capturing delicate line-work textures, character concepts, and narrative techniques.</p>
                 </div>
                 <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
                   <span class="small text-muted"><i class="bi bi-clock me-2"></i>Weekly Blocks</span>
-                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
+                  <button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
                 </div>
               </div>
             </div>
@@ -187,14 +183,14 @@ import { HttpClient } from '@angular/common/http';
                 <div>
                   <div class="d-flex justify-content-between align-items-center mb-2">
                     <span class="badge rounded-0 text-uppercase tracking-wider px-3 py-1 bg-dark text-white style-badge">Intensive</span>
-                    <span class="serif text-dark fw-normal fs-5">£120</span>
+                    <span class="serif text-dark fw-normal fs-4">£120</span>
                   </div>
                   <h3 class="serif h4 fw-light mb-2">Private Studio Mentoring</h3>
                   <p class="text-secondary small">One-on-one tailored private tutorial blocks designed explicitly around personalized portfolio development plans.</p>
                 </div>
                 <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
                   <span class="small text-muted"><i class="bi bi-person-fill me-2"></i>1-on-1 Mentorship</span>
-                  <button class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
+                  <button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
                 </div>
               </div>
             </div>
@@ -287,7 +283,7 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4">
-          @for (item of [1,2,3,4]; track item) {
+          @for (item of [1, 2, 3, 4]; track item) {
             <div class="col-6 col-lg-3">
               <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
                 <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; background-color: #FAF9F6 !important;">
@@ -302,17 +298,24 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- ✉️ SECTION 8: EDITORIAL CONTACT & MATTING FOOTER -->
+      <!-- ✉️ SECTION 8: REFINED CONTACT ATELIER (With 2026 Native Control Flow Feedback) -->
       <section id="contact" class="container-fluid py-5 px-lg-5" style="background: var(--charcoal-ink); color: var(--gallery-white); scroll-margin-top: 100px;">
         <div class="row py-5 align-items-center">
           <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
             <span class="text-uppercase small ls-5 d-block mb-3" style="color: #C5A059;">Newsletter</span>
             <h2 class="serif display-4 fw-light mb-4">Stay in Touch</h2>
             <p class="small text-muted mb-4" style="max-width: 450px;">Subscribe to receive updates on upcoming workshop schedules, community art drops, and new exhibition viewings.</p>
-            <div class="d-flex border-bottom border-secondary border-opacity-50 pb-2 mt-4" style="max-width: 500px;">
-              <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="bg-transparent border-0 text-white w-100 px-2 font-monospace small" style="outline: none; letter-spacing: 1px;">
-              <button class="btn p-0 border-0 text-uppercase fw-bold small tracking-wider text-white" style="font-size: 0.75rem;">Join ⟶</button>
-            </div>
+            
+            @if (showSuccessFeedback) {
+              <div class="p-3 mb-4 text-center border font-monospace small" style="background: var(--soft-wash-bg); color: var(--willow-slate);">
+                ✨ THANK YOU. YOU HAVE JOINED THE ATELIER LEDGER.
+              </div>
+            } @else {
+              <div class="d-flex border-bottom border-secondary border-opacity-50 pb-2 mt-4" style="max-width: 500px;">
+                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="bg-transparent border-0 text-white w-100 px-2 font-monospace small" style="outline: none; letter-spacing: 1px;">
+                <button (click)="submitContact()" class="btn p-0 border-0 text-uppercase fw-bold small tracking-wider text-white" style="font-size: 0.75rem;">Join ⟶</button>
+              </div>
+            }
           </div>
           <div class="col-12 col-lg-6 ps-lg-5 border-start border-secondary border-opacity-25">
             <div class="row g-4">
@@ -374,10 +377,10 @@ export class App implements OnInit {
 
   showScrollArrow = false;
   isAiPanelOpen = false;
+  showSuccessFeedback = false;
   cartCount = 0;
   backendProducts: any[] = [];
   
-  // 🎨 Default State for Interactive Virtual Framing Customizer
   currentFrameColor = '#D9C3A5';
   currentFrameName = 'Natural Oak';
 
@@ -403,6 +406,10 @@ export class App implements OnInit {
 
   addToBag() {
     this.cartCount++;
+  }
+
+  submitContact() {
+    this.showSuccessFeedback = true;
   }
 
   @HostListener('window:scroll', [])
