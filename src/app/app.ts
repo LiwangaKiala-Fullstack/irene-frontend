@@ -70,7 +70,7 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
 
-        <!-- 🎨 LIVE INTERACTIVE FRAME CONFIGURATOR PICKER -->
+        <!-- 🎨 INTERACTIVE FRAME COLOR PICKER -->
         <div class="row mb-5 justify-content-center">
           <div class="col-auto bg-light p-3 border shadow-sm rounded-0 d-flex align-items-center gap-4">
             <span class="small font-monospace text-uppercase willow mb-0">Select Gallery Frame Color:</span>
@@ -84,15 +84,15 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
 
-        <div class="row g-5 align-items-start">
-          <!-- Artwork Card 1: Woman with the mask -->
+        <div class="row g-5 align-items-start justify-content-center">
+          <!-- Artwork Card 1: Woman with the mask (Scaled up to 80vh height with zero gap boundaries) -->
           <div class="col-12 col-lg-7">
-            <div class="gallery-card bg-white p-2">
-              <div class="museum-frame p-4 shadow d-flex align-items-center justify-content-center" 
+            <div class="gallery-card bg-white p-0">
+              <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
                    [style.border-color]="currentFrameColor" 
-                   style="height: 55vh; border-style: solid; background-color: #FFFFFF;">
-                <div class="img-wrapper overflow-hidden w-100 h-100">
-                  <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-contain" alt="Woman with the mask painting">
+                   style="height: 80vh; border-style: solid; background-color: #FFFFFF;">
+                <div class="img-wrapper overflow-hidden w-100 h-100 p-0 m-0">
+                  <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-cover" alt="Woman with the mask painting">
                 </div>
               </div>
               <div class="mt-3 px-2 text-start">
@@ -102,14 +102,14 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
-          <!-- Artwork Card 2: The forest -->
+          <!-- Artwork Card 2: The forest (Perfect height pairing with zero inner gaps) -->
           <div class="col-12 col-lg-5">
-            <div class="gallery-card bg-white p-2">
-              <div class="museum-frame p-4 shadow d-flex align-items-center justify-content-center" 
+            <div class="gallery-card bg-white p-0">
+              <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
                    [style.border-color]="currentFrameColor" 
-                   style="height: 70vh; border-style: solid; background-color: #FFFFFF;">
-                <div class="img-wrapper overflow-hidden w-100 h-100">
-                  <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-contain" alt="The forest landscape painting">
+                   style="height: 80vh; border-style: solid; background-color: #FFFFFF;">
+                <div class="img-wrapper overflow-hidden w-100 h-100 p-0 m-0">
+                  <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-cover" alt="The forest landscape painting">
                 </div>
               </div>
               <div class="mt-3 px-2 text-start">
@@ -121,7 +121,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE -->
+      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE (Uniform Height & Fashion Price Layouts) -->
       <section id="classes" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-center">
@@ -129,19 +129,21 @@ import { HttpClient } from '@angular/common/http';
             <h2 class="serif display-5 fw-light">Creative Classes & Workshops</h2>
           </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
+          <!-- Workshop Card 1 -->
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 62vh;">
-              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 26vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-contain" alt="Painting class party session">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 60vh;">
+              <div class="position-relative overflow-hidden w-100" style="height: 28vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-cover" alt="Painting class party session">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="badge rounded-0 text-uppercase tracking-wider px-3 py-1 bg-dark text-white style-badge">Group Event</span>
-                    <span class="serif text-dark fw-normal fs-5">£45</span>
+                  <div class="d-flex justify-content-between align-items-baseline mb-2">
+                    <h3 class="serif h4 fw-light mb-0">Watercolour Painting Parties</h3>
+                    <!-- Premium Editorial Fashion Pricing presentation -->
+                    <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£45.00</span>
                   </div>
-                  <h3 class="serif h4 fw-light mb-2">Watercolour Painting Parties</h3>
+                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-secondary text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">Group Event</span>
                   <p class="text-secondary small mb-0">Discover soft washes and color blending options in a social, welcoming community workspace.</p>
                 </div>
                 <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
@@ -152,18 +154,19 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
+          <!-- Workshop Card 2 -->
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 62vh;">
-              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 26vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-contain" alt="Ink & illustration class setting">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 60vh;">
+              <div class="position-relative overflow-hidden w-100" style="height: 28vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-cover" alt="Ink & illustration class setting">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="badge rounded-0 text-uppercase tracking-wider px-3 py-1 bg-dark text-white style-badge">All Levels</span>
-                    <span class="serif text-dark fw-normal fs-4">£35</span>
+                  <div class="d-flex justify-content-between align-items-baseline mb-2">
+                    <h3 class="serif h4 fw-light mb-0">Ink & Illustration Classes</h3>
+                    <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£35.00</span>
                   </div>
-                  <h3 class="serif h4 fw-light mb-2">Ink & Illustration Classes</h3>
+                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-secondary text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">All Levels</span>
                   <p class="text-secondary small mb-0">Focusing on capturing delicate line-work textures, character concepts, and narrative techniques.</p>
                 </div>
                 <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
@@ -174,19 +177,20 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
+          <!-- Workshop Card 3 -->
           <div class="col-12 col-md-6 col-xl-4">
-            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 62vh;">
-              <div class="position-relative d-flex align-items-center justify-content-center bg-light" style="height: 26vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-9.jpg" class="w-100 h-100 object-fit-contain" alt="Private studio mentoring session">
+            <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 60vh;">
+              <div class="position-relative overflow-hidden w-100" style="height: 28vh; background-color: #FAF9F6 !important;">
+                <img src="image/Irene-9.jpg" class="w-100 h-100 object-fit-cover" alt="Private studio mentoring session">
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="badge rounded-0 text-uppercase tracking-wider px-3 py-1 bg-dark text-white style-badge">Intensive</span>
-                    <span class="serif text-dark fw-normal fs-4">£120</span>
+                  <div class="d-flex justify-content-between align-items-baseline mb-2">
+                    <h3 class="serif h4 fw-light mb-0">Private Studio Mentoring</h3>
+                    <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£120.00</span>
                   </div>
-                  <h3 class="serif h4 fw-light mb-2">Private Studio Mentoring</h3>
-                  <p class="text-secondary small">One-on-one tailored private tutorial blocks designed explicitly around personalized portfolio development plans.</p>
+                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-dark text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">Intensive</span>
+                  <p class="text-secondary small mb-0">One-on-one tailored private tutorial blocks designed explicitly around personalized portfolio development plans.</p>
                 </div>
                 <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
                   <span class="small text-muted"><i class="bi bi-person-fill me-2"></i>1-on-1 Mentorship</span>
@@ -298,7 +302,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- ✉️ SECTION 8: REFINED CONTACT ATELIER (With 2026 Native Control Flow Feedback) -->
+      <!-- ✉️ SECTION 8: REFINED CONTACT ATELIER -->
       <section id="contact" class="container-fluid py-5 px-lg-5" style="background: var(--charcoal-ink); color: var(--gallery-white); scroll-margin-top: 100px;">
         <div class="row py-5 align-items-center">
           <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
@@ -381,6 +385,7 @@ export class App implements OnInit {
   cartCount = 0;
   backendProducts: any[] = [];
   
+  // Dynamic default state hooks for your customized virtual frames setup
   currentFrameColor = '#D9C3A5';
   currentFrameName = 'Natural Oak';
 
