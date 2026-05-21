@@ -246,3 +246,15 @@ body {
 .end-4 { right: 2rem !important; }
 input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
 
+/* 🔎 NATIVE AMAZON-STYLE ZOOM TRANSITION PHYSICS LAYERS */
+.zoom-box {
+  background-color: #FAF9F6 !important;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.zoom-img {
+  transition: transform 0.2s ease-out, transform-origin 0.1s ease-out !important;
+  width: 100%;
+  height: 100%;
+}
+

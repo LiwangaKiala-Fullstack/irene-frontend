@@ -8,8 +8,6 @@ import { HttpClient } from '@angular/common/http';
     <!-- 🏛️ 2026 EDITORIAL NAVBAR MENU -->
     <nav class="navbar fixed-top py-4 px-lg-5" style="backdrop-filter: blur(15px); background: rgba(255, 255, 255, 0.85); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.03);">
       <div class="container-fluid d-flex align-items-center position-relative">
-        
-        <!-- Left Column: Logo & Tagline Stacked -->
         <div class="brand-container d-flex flex-column align-items-start m-0 p-0">
           <a class="navbar-brand fw-bold fs-3 serif mb-0 p-0 text-dark text-decoration-none" href="#" style="letter-spacing: 1px; line-height: 1.0;">
             Irene Caboni
@@ -18,8 +16,6 @@ import { HttpClient } from '@angular/common/http';
             Fine Art & Illustration
           </span>
         </div>
-        
-        <!-- Center Column: Menu Links -->
         <div class="mx-auto d-none d-lg-flex align-items-center gap-5">
           <a href="#" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Home</a>
           <a href="#gallery" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Gallery</a>
@@ -28,8 +24,6 @@ import { HttpClient } from '@angular/common/http';
           <a href="#about" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Biography</a>
           <a href="#contact" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Atelier</a>
         </div>
-        
-        <!-- Right Column: Boutique Handbag Basket Target -->
         <div class="d-flex align-items-center ms-auto">
           <div class="position-relative magnetic-bag" style="cursor: pointer;">
             <i class="bi bi-bag fs-2 text-dark"></i>
@@ -38,7 +32,6 @@ import { HttpClient } from '@angular/common/http';
             </span>
           </div>
         </div>
-
       </div>
     </nav>
 
@@ -69,8 +62,6 @@ import { HttpClient } from '@angular/common/http';
             <h2 class="serif display-5 fw-light mb-3">Original Paintings & Illustrations</h2>
           </div>
         </div>
-
-        <!-- 🎨 INTERACTIVE FRAME COLOR PICKER -->
         <div class="row mb-5 justify-content-center">
           <div class="col-auto bg-light p-3 border shadow-sm rounded-0 d-flex align-items-center gap-4">
             <span class="small font-monospace text-uppercase willow mb-0">Select Gallery Frame Color:</span>
@@ -83,9 +74,7 @@ import { HttpClient } from '@angular/common/http';
             <span class="small font-monospace text-dark fw-bold mb-0 text-uppercase ls-2">Style: {{ currentFrameName }}</span>
           </div>
         </div>
-
         <div class="row g-5 align-items-start justify-content-center">
-          <!-- Artwork Card 1: Woman with the mask -->
           <div class="col-12 col-lg-7">
             <div class="gallery-card bg-white p-0">
               <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
@@ -101,8 +90,6 @@ import { HttpClient } from '@angular/common/http';
               </div>
             </div>
           </div>
-
-          <!-- Artwork Card 2: The forest -->
           <div class="col-12 col-lg-5">
             <div class="gallery-card bg-white p-0">
               <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
@@ -121,7 +108,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE (Images Expanded to 38vh, Cards to 72vh) -->
+      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE -->
       <section id="classes" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-center">
@@ -130,10 +117,8 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4 justify-content-center">
-          <!-- Workshop Card 1 -->
           <div class="col-12 col-md-6 col-xl-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
-              <!-- 📐 Image container expanded to exactly 38vh -->
               <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-cover" alt="Painting class party session">
               </div>
@@ -153,11 +138,8 @@ import { HttpClient } from '@angular/common/http';
               </div>
             </div>
           </div>
-
-          <!-- Workshop Card 2 -->
           <div class="col-12 col-md-6 col-xl-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
-              <!-- 📐 Image container expanded to exactly 38vh -->
               <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-cover" alt="Ink & illustration class setting">
               </div>
@@ -177,11 +159,8 @@ import { HttpClient } from '@angular/common/http';
               </div>
             </div>
           </div>
-
-          <!-- Workshop Card 3 -->
           <div class="col-12 col-md-6 col-xl-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
-              <!-- 📐 Image container expanded to exactly 38vh -->
               <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
                 <img src="image/Irene-9.jpg" class="w-100 h-100 object-fit-cover" alt="Private studio mentoring session">
               </div>
@@ -191,7 +170,7 @@ import { HttpClient } from '@angular/common/http';
                     <h3 class="serif h4 fw-light mb-0">Private Studio Mentoring</h3>
                     <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£120.00</span>
                   </div>
-                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-dark text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">Intensive</span>
+                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-dark text-white style-badge">Intensive</span>
                   <p class="text-secondary small mb-0">One-on-one tailored private tutorial blocks designed explicitly around personalized portfolio development plans.</p>
                 </div>
                 <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
@@ -204,7 +183,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🛍️ SECTION 4: THE ART SHOP ORIGINAL SELECTIONS -->
+      <!-- 🛍️ SECTION 4: THE ART SHOP (With Amazon-Style Cursor Target Zoom Framing) -->
       <section id="shop" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-center">
@@ -213,10 +192,12 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4">
+          <!-- Product Item 1: Clay Earrings with Live Zoom Tracking -->
           <div class="col-12 col-md-6">
             <div class="shop-card bg-white p-3 shadow-sm border-0">
-              <div class="shop-img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative" style="height: 45vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-5.jpg" class="w-100 h-100 object-fit-contain" alt="Handcrafted artisan earrings">
+              <div (mousemove)="onZoomMove($event)" (mouseleave)="onZoomLeave()" class="zoom-box overflow-hidden bg-light position-relative" style="height: 45vh; cursor: crosshair;">
+                <img src="image/Irene-5.jpg" class="w-100 h-100 object-fit-contain zoom-img" alt="Handcrafted artisan earrings">
+                <span class="position-absolute bottom-3 end-3 badge bg-dark rounded-0 text-uppercase small ls-2 opacity-75" style="font-size: 0.55rem; pointer-events: none;"><i class="bi bi-search me-1"></i> Hover to Zoom</span>
                 <span class="position-absolute top-3 start-3 badge bg-dark rounded-0 text-uppercase small ls-2" style="font-size: 0.6rem; letter-spacing: 1px;">Handmade</span>
               </div>
               <div class="mt-4 px-2">
@@ -232,10 +213,12 @@ import { HttpClient } from '@angular/common/http';
             </div>
           </div>
 
+          <!-- Product Item 2: Fine Landscape Framed Print with Live Zoom Tracking -->
           <div class="col-12 col-md-6">
             <div class="shop-card bg-white p-3 shadow-sm border-0">
-              <div class="shop-img-wrapper overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative" style="height: 45vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-6.jpg" class="w-100 h-100 object-fit-contain" alt="Boutique art print item">
+              <div (mousemove)="onZoomMove($event)" (mouseleave)="onZoomLeave()" class="zoom-box overflow-hidden bg-light position-relative" style="height: 45vh; cursor: crosshair;">
+                <img src="image/Irene-6.jpg" class="w-100 h-100 object-fit-contain zoom-img" alt="Boutique art print item">
+                <span class="position-absolute bottom-3 end-3 badge bg-dark rounded-0 text-uppercase small ls-2 opacity-75" style="font-size: 0.55rem; pointer-events: none;"><i class="bi bi-search me-1"></i> Hover to Zoom</span>
                 <span class="position-absolute top-3 start-3 badge bg-dark rounded-0 text-uppercase small ls-2" style="font-size: 0.6rem; letter-spacing: 1px;">Limited Edition</span>
               </div>
               <div class="mt-4 px-2">
@@ -289,7 +272,7 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4">
-          @for (item of [1, 2, 3, 4]; track item) {
+          @for (item of; track item) {
             <div class="col-6 col-lg-3">
               <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
                 <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; background-color: #FAF9F6 !important;">
@@ -416,6 +399,26 @@ export class App implements OnInit {
 
   submitContact() {
     this.showSuccessFeedback = true;
+  }
+
+  // 🔎 AMAZON MATRIX ZOOM ENGINE COORDINATE CALCULATION MATHEMATICS
+  onZoomMove(event: MouseEvent) {
+    const container = event.currentTarget as HTMLElement;
+    const img = container.querySelector('.zoom-img') as HTMLImageElement;
+    
+    const rect = container.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    
+    img.style.transformOrigin = `${x}% ${y}%`;
+    img.style.transform = 'scale(2.2)'; // 👈 Sets the magnification level flawlessly
+  }
+
+  onZoomLeave() {
+    window.document.querySelectorAll('.zoom-img').forEach((el) => {
+      (el as HTMLElement).style.transform = 'scale(1)';
+      (el as HTMLElement).style.transformOrigin = 'center center';
+    });
   }
 
   @HostListener('window:scroll', [])
