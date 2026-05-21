@@ -44,8 +44,10 @@ import { HttpClient } from '@angular/common/http';
 
     <main style="padding-top: 0;">
       <!-- 🎬 SECTION 1: HERO PARALLAX CONTAINER -->
+            <!-- 🎬 SECTION 1: HERO PARALLAX CONTAINER -->
       <section id="home" class="vh-100 d-flex align-items-end justify-content-center text-center px-4 parallax-hero" 
-               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg'); padding-bottom: 12vh;">
+               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/image/a passion for creativity.jpg'); padding-bottom: 12vh;">
+
         <div>
           <h1 class="serif mb-4" style="font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.2; color: #2B2B2B; text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
             A Passion for <br>

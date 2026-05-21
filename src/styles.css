@@ -41,6 +41,17 @@ body {
 .magnetic-bag:hover { transform: scale(1.15) rotate(-4deg); }
 
 /* 🎬 3. PARALLAX HERO SECTION */
+
+  /* 🎬 7. SECTION 1 ELEVATED HERO WITH IMMERSIVE PARALLAX EFFECTS */
 .parallax-hero {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg');
-  background-attachment: fixed !important; background-position: center center !important; background-repeat: no-repeat !important; background-size
+  height: 100vh !important;
+  width: 100% !important;
+  background-attachment: fixed !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important; 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
