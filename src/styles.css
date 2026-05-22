@@ -258,3 +258,56 @@ input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
   height: 100%;
 }
 
+/* 📸 ATELIER LIVE NOTICE BOARD ASYMMETRICAL ARCHITECTURE */
+.notice-pin-card {
+  background: #FFFFFF;
+  padding: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  min-height: 38vh;
+  display: flex;
+  flex-column: justify-content-between;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer;
+}
+
+/* Beautiful textured variations to make items look hand-pinned */
+.board-ticket {
+  border-left: 4px solid var(--charcoal-ink) !important;
+  transform: rotate(1.5deg) translateY(5px);
+}
+
+.board-sticky-note {
+  background-color: #FFFDF3 !important; /* Soft textured handwritten note paper */
+  transform: rotate(-2.5deg) translateY(-10px);
+}
+
+.board-polaroid {
+  padding: 14px 14px 24px 14px !important;
+  transform: rotate(2deg) translateY(12px);
+}
+
+.board-meetup {
+  border-top: 4px solid #C5A059 !important;
+  transform: rotate(-1.5deg) translateY(-2px);
+}
+
+/* Red vintage board pins positioning layout */
+.pin-icon {
+  position: absolute;
+  top: -12px;
+  left: 46%;
+  opacity: 0.85;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+/* Addictive Notice Board Interactions: Straightens up smoothly and floats forward */
+.notice-pin-card:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-15px) !important;
+  box-shadow: 0 30px 60px rgba(43, 43, 43, 0.08) !important;
+  z-index: 99;
+  border-color: rgba(43, 43, 43, 0.15) !important;
+}
+

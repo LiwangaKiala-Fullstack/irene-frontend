@@ -263,31 +263,71 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 📸 SECTION 7: THE INSTAGRAM LIVE MEDIA MATRICES -->
-      <section id="social-feed" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF;">
+            <!-- 📸 SECTION 7: ATELIER LIVE NOTICE BOARD & CREATIVE CALENDAR -->
+      <section id="social-feed" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); position: relative; z-index: 10;">
         <div class="row mb-5 pt-4">
           <div class="col-12 text-center">
-            <span class="text-uppercase small willow ls-5 d-block mb-2">Studio Diary</span>
-            <h2 class="serif display-5 fw-light">Latest Illustrations & Updates</h2>
+            <span class="text-uppercase small willow ls-5 d-block mb-2">Live from the Atelier</span>
+            <h2 class="serif display-5 fw-light">Upcoming Events & Open Studio Notes</h2>
           </div>
         </div>
-        <div class="row g-4">
-           @for (item of [1, 2, 3, 4]; track item) {
-
-            <div class="col-6 col-lg-3">
-              <div class="instagram-card bg-white p-2 shadow-sm border-0 position-relative overflow-hidden">
-                <div class="bg-light d-flex align-items-center justify-content-center position-relative wrapper-box" style="height: 30vh; background-color: #FAF9F6 !important;">
-                  <img src="image/Irene-8.jpg" class="w-100 h-100 object-fit-contain" alt="Studio diary stream update">
-                  <div class="insta-hover-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-75 opacity-0 transition-all">
-                    <span class="text-white small tracking-widest text-uppercase fw-bold" style="font-size: 0.7rem;"><i class="bi bi-heart-fill me-2"></i> View Post</span>
-                  </div>
-                </div>
+        
+        <!-- Interactive Multi-Format Gallery Bulletin Board -->
+        <div class="row g-5 justify-content-center pt-2 pb-5">
+          
+          <!-- Element 1: Next Live Event Ticket Frame -->
+          <div class="col-12 col-md-4 col-xl-3">
+            <div class="notice-pin-card board-ticket shadow-sm position-relative">
+              <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-danger text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">Selling Fast</span>
+              <div class="font-monospace text-muted small mb-2">LIVE WORKSHOP // MAY 2026</div>
+              <h4 class="serif fw-bold h5 mb-3 text-dark">Summer Botanical Pop-Up</h4>
+              <p class="text-secondary small mb-4">An intimate afternoon painting seasonal blooms live inside the local Carshalton glasshouses.</p>
+              <div class="border-top border-dashed pt-3 d-flex justify-content-between align-items-center">
+                <span class="small fw-bold font-monospace text-dark">6 SLOTS LEFT</span>
+                <a href="#classes" class="small fw-bold text-dark text-decoration-underline font-monospace" style="font-size: 0.75rem;">SECURE PASS</a>
               </div>
             </div>
-          }
+          </div>
+
+          <!-- Element 2: Irene's Handwritten Sticky Note -->
+          <div class="col-12 col-md-4 col-xl-3">
+            <div class="notice-pin-card board-sticky-note shadow-sm position-relative">
+              <span class="pin-icon"><i class="bi bi-pin-fill text-danger fs-5"></i></span>
+              <span class="text-uppercase font-monospace text-muted d-block mb-2" style="font-size: 0.6rem; letter-spacing: 1.5px;">Studio Note</span>
+              <p class="serif fst-italic h5 text-dark mb-0" style="line-height: 1.5; opacity: 0.9;">
+                "Currently working on a large floral mural commission for a garden pavilion. Dropping behind-the-scenes sketches here next week!"
+              </p>
+              <span class="d-block text-end font-monospace small text-muted mt-3">— i.c.</span>
+            </div>
+          </div>
+
+          <!-- Element 3: Exhibition Announcement Photo Frame -->
+          <div class="col-12 col-md-4 col-xl-3">
+            <div class="notice-pin-card board-polaroid shadow-sm position-relative">
+              <div class="polaroid-img-box mb-3">
+                <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-cover" alt="Exhibition frame setup">
+              </div>
+              <div class="polaroid-caption serif text-center" style="font-size: 0.85rem;">Exhibition Planning: Surrey Open Studios 2026 🎨</div>
+            </div>
+          </div>
+
+          <!-- Element 4: Free Community Meetup Notice -->
+          <div class="col-12 col-md-4 col-xl-3">
+            <div class="notice-pin-card board-meetup shadow-sm position-relative">
+              <div class="font-monospace text-muted small mb-2">COMMUNITY GATHERING</div>
+              <h4 class="serif fw-light h5 mb-3 text-dark">Sketching Club Meetup</h4>
+              <p class="text-secondary small mb-3">Grab your ink pads and sketchbooks! Join us for a casual outdoor drawing walk near the Carshalton ponds.</p>
+              <div class="border-top pt-3 d-flex justify-content-between align-items-center">
+                <span class="small font-monospace text-success"><i class="bi bi-circle-fill me-1" style="font-size:0.5rem;"></i> FREE EVENT</span>
+                <span class="small text-muted font-monospace" style="font-size: 0.7rem;"><i class="bi bi-calendar-event me-1"></i> May 30, 2PM</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
+      
       <!-- ✉️ SECTION 8: REFINED CONTACT ATELIER -->
       <section id="contact" class="container-fluid py-5 px-lg-5" style="background: var(--charcoal-ink); color: var(--gallery-white); scroll-margin-top: 100px;">
         <div class="row py-5 align-items-center">
