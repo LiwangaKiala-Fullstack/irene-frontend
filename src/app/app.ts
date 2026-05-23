@@ -5,16 +5,12 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-root',
   standalone: true,
   template: `
-    <!-- 🏛️ 2026 EDITORIAL NAVBAR MENU -->
+    <!-- 🏛️ NAVBAR MENU -->
     <nav class="navbar fixed-top py-4 px-lg-5" style="backdrop-filter: blur(15px); background: rgba(255, 255, 255, 0.85); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.03);">
       <div class="container-fluid d-flex align-items-center position-relative">
         <div class="brand-container d-flex flex-column align-items-start m-0 p-0">
-          <a class="navbar-brand fw-bold fs-3 serif mb-0 p-0 text-dark text-decoration-none" href="#" style="letter-spacing: 1px; line-height: 1.0;">
-            Irene Caboni
-          </a>
-          <span class="willow font-monospace m-0 text-uppercase text-nowrap ps-4" style="font-size: 0.6rem; letter-spacing: 1.5px; margin-top: 6px !important; display: block;">
-            Fine Art & Illustration
-          </span>
+          <a class="navbar-brand fw-bold fs-3 serif mb-0 p-0 text-dark text-decoration-none" href="#">Irene Caboni</a>
+          <span class="willow font-monospace m-0 text-uppercase text-nowrap ps-4" style="font-size: 0.6rem; letter-spacing: 1.5px; margin-top: 6px !important; display: block;">Fine Art & Illustration</span>
         </div>
         <div class="mx-auto d-none d-lg-flex align-items-center gap-5">
           <a href="#" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Home</a>
@@ -25,20 +21,18 @@ import { HttpClient } from '@angular/common/http';
           <a href="#contact" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Atelier</a>
         </div>
         <div class="d-flex align-items-center ms-auto">
-          <div class="position-relative magnetic-bag" style="cursor: pointer;">
+          <div class="position-relative magnetic-bag" style="cursor: pointer;" (click)="addToBag()">
             <i class="bi bi-bag fs-2 text-dark"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.65rem; padding: 0.5em 0.7em;">
-              {{ cartCount }}
-            </span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.65rem; padding: 0.5em 0.7em;">{{ cartCount }}</span>
           </div>
         </div>
       </div>
     </nav>
 
-    <main style="padding-top: 0;">
-      <!-- 🎬 SECTION 1: HERO PARALLAX CONTAINER -->
+          <main style="padding-top: 0;">
+      <!-- 🎬 SECTION 1: HERO PARALLAX (Full Screen Edge-to-Edge with Natural Zoom Scale) -->
       <section id="home" class="vh-100 d-flex align-items-end justify-content-center text-center px-4 parallax-hero" 
-               style="background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/a passion for creativity.jpg'); padding-bottom: 12vh;">
+               style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/image/a passion for creativity.jpg'); padding-bottom: 12vh; background-size: cover !important; background-position: center center !important;">
         <div>
           <h1 class="serif mb-4" style="font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.2; color: #2B2B2B; text-shadow: 0 2px 15px rgba(255,255,255,0.9);">
             A Passion for <br>
@@ -54,7 +48,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      <!-- 🖼️ SECTION 2: Interactive Virtual Gallery Studio -->
+            <!-- 🖼️ SECTION 2: INTERACTIVE VIRTUAL GALLERY STUDIO (Custom Aspect Ratio Matching) -->
       <section id="gallery" class="container-fluid py-5 px-lg-5" style="background: #FFFFFF; scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-4 pt-5">
           <div class="col-12 text-center">
@@ -62,26 +56,32 @@ import { HttpClient } from '@angular/common/http';
             <h2 class="serif display-5 fw-light mb-3">Original Paintings & Illustrations</h2>
           </div>
         </div>
+
+        <!-- 🎨 LIVE INTERACTIVE FRAME COLOR PICKER -->
         <div class="row mb-5 justify-content-center">
           <div class="col-auto bg-light p-3 border shadow-sm rounded-0 d-flex align-items-center gap-4">
             <span class="small font-monospace text-uppercase willow mb-0">Select Gallery Frame Color:</span>
             <div class="d-flex gap-3">
-              <button (click)="changeFrame('#D9C3A5', 'Natural Oak')" class="swatch-btn" style="background-color: #D9C3A5;" title="Natural Oak"></button>
-              <button (click)="changeFrame('#5C4033', 'Elegant Walnut')" class="swatch-btn" style="background-color: #5C4033;" title="Elegant Walnut"></button>
-              <button (click)="changeFrame('#1C1C1C', 'Minimalist Charcoal')" class="swatch-btn" style="background-color: #1C1C1C;" title="Minimalist Charcoal"></button>
-              <button (click)="changeFrame('#EAEAEA', 'Gallery White')" class="swatch-btn" style="background-color: #EAEAEA;" title="Gallery White"></button>
+              <button (click)="changeFrame('#D9C3A5', 'Natural Oak')" class="swatch-btn" style="background-color: #D9C3A5;"></button>
+              <button (click)="changeFrame('#5C4033', 'Elegant Walnut')" class="swatch-btn" style="background-color: #5C4033;"></button>
+              <button (click)="changeFrame('#1C1C1C', 'Minimalist Charcoal')" class="swatch-btn" style="background-color: #1C1C1C;"></button>
+              <button (click)="changeFrame('#EAEAEA', 'Gallery White')" class="swatch-btn" style="background-color: #EAEAEA;"></button>
             </div>
             <span class="small font-monospace text-dark fw-bold mb-0 text-uppercase ls-2">Style: {{ currentFrameName }}</span>
           </div>
         </div>
-        <div class="row g-5 align-items-start justify-content-center">
-          <div class="col-12 col-lg-7">
-            <div class="gallery-card bg-white p-0">
+
+        <div class="row g-5 align-items-end justify-content-center">
+          
+          <!-- Artwork Card 1: Woman with the mask (Vertical Canvas — Full Face Protected) -->
+          <div class="col-12 col-md-6 col-lg-5">
+            <div class="gallery-card bg-white p-0 mx-auto" style="max-width: 450px;">
               <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
                    [style.border-color]="currentFrameColor" 
-                   style="height: 80vh; border-style: solid; background-color: #FFFFFF;">
+                   style="height: 65vh; border-style: solid; background-color: #FFFFFF;">
                 <div class="img-wrapper overflow-hidden w-100 h-100 p-0 m-0">
-                  <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-cover" alt="Woman with the mask painting">
+                  <!-- Kept contain to fully reveal her whole head, chin, and mouth safely -->
+                  <img src="image/Irene-3.jpg" class="w-100 h-100 object-fit-contain" alt="Woman with the mask painting">
                 </div>
               </div>
               <div class="mt-3 px-2 text-start">
@@ -90,12 +90,16 @@ import { HttpClient } from '@angular/common/http';
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-5">
+
+          <!-- Artwork Card 2: The forest (Horizontal Canvas — Gapless Border Touch) -->
+          <div class="col-12 col-md-6 col-lg-7">
             <div class="gallery-card bg-white p-0">
+              <!-- Lowered height container strictly to 65vh so it matches Card 1 perfectly and removes blank background gaps -->
               <div class="museum-frame p-0 shadow overflow-hidden w-100 d-flex align-items-center justify-content-center" 
                    [style.border-color]="currentFrameColor" 
-                   style="height: 80vh; border-style: solid; background-color: #FFFFFF;">
+                   style="height: 65vh; border-style: solid; background-color: #FFFFFF;">
                 <div class="img-wrapper overflow-hidden w-100 h-100 p-0 m-0">
+                  <!-- Switched to object-fit-cover to make the landscape fill the width and height with zero margins -->
                   <img src="image/Irene-4.jpg" class="w-100 h-100 object-fit-cover" alt="The forest landscape painting">
                 </div>
               </div>
@@ -105,10 +109,13 @@ import { HttpClient } from '@angular/common/http';
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
-      <!-- 🏛️ SECTION 3: REFINED WORKSHOPS ENGINE -->
+
+
+            <!-- 🏛️ SECTION 3: CREATIVE WORKSHOPS ENGINE (Uniform 72vh Cards & 38vh Images) -->
       <section id="classes" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); scroll-margin-top: 100px; position: relative; z-index: 10;">
         <div class="row mb-5 pt-5">
           <div class="col-12 text-center">
@@ -117,69 +124,40 @@ import { HttpClient } from '@angular/common/http';
           </div>
         </div>
         <div class="row g-4 justify-content-center">
-          <div class="col-12 col-md-6 col-xl-4">
+          
+          <!-- Column 1: Watercolour Parties -->
+          <div class="col-12 col-md-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
-              <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-cover" alt="Painting class party session">
-              </div>
+              <div class="position-relative overflow-hidden w-100" style="height: 38vh;"><img src="image/Irene-1.jpg" class="w-100 h-100 object-fit-cover" alt="Painting parties"></div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="d-flex justify-content-between align-items-baseline mb-2">
-                    <h3 class="serif h4 fw-light mb-0">Watercolour Painting Parties</h3>
-                    <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£45.00</span>
-                  </div>
-                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-secondary text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">Group Event</span>
-                  <p class="text-secondary small mb-0">Discover soft washes and color blending options in a social, welcoming community workspace.</p>
-                </div>
-                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
-                  <span class="small text-muted"><i class="bi bi-geo-alt me-2"></i>Carshalton Studio</span>
-                  <button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
-                </div>
+                <div><div class="d-flex justify-content-between align-items-baseline mb-2"><h3 class="serif h4 fw-light mb-0">Watercolour Parties</h3><span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£45.00</span></div><span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-secondary text-white mb-3" style="font-size: 0.55rem;">Group Event</span><p class="text-secondary small mb-0">Discover soft washes and color blending options in a social community workspace.</p></div>
+                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center"><span class="small text-muted"><i class="bi bi-geo-alt me-2"></i>Carshalton Studio</span><button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button></div>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-xl-4">
+
+          <!-- Column 2: Ink & Illustration -->
+          <div class="col-12 col-md-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
-              <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-cover" alt="Ink & illustration class setting">
-              </div>
+              <div class="position-relative overflow-hidden w-100" style="height: 38vh;"><img src="image/Irene-2.jpg" class="w-100 h-100 object-fit-cover" alt="Ink classes"></div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="d-flex justify-content-between align-items-baseline mb-2">
-                    <h3 class="serif h4 fw-light mb-0">Ink & Illustration Classes</h3>
-                    <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£35.00</span>
-                  </div>
-                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-secondary text-white mb-3" style="font-size: 0.55rem; letter-spacing: 1px;">All Levels</span>
-                  <p class="text-secondary small mb-0">Focusing on capturing delicate line-work textures, character concepts, and narrative techniques.</p>
-                </div>
-                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
-                  <span class="small text-muted"><i class="bi bi-clock me-2"></i>Weekly Blocks</span>
-                  <button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
-                </div>
+                <div><div class="d-flex justify-content-between align-items-baseline mb-2"><h3 class="serif h4 fw-light mb-0">Ink & Illustration</h3><span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£35.00</span></div><span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-secondary text-white mb-3" style="font-size: 0.55rem;">All Levels</span><p class="text-secondary small mb-0">Focusing on capturing delicate line-work textures and character concepts.</p></div>
+                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center"><span class="small text-muted"><i class="bi bi-clock me-2"></i>Weekly Blocks</span><button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button></div>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-xl-4">
+
+          <!-- Column 3: Private Studio Mentoring (Irene-9.jpg) -->
+          <div class="col-12 col-md-4">
             <div class="booking-card bg-white shadow-sm border-0 d-flex flex-column justify-content-between overflow-hidden" style="height: 72vh;">
-              <div class="position-relative overflow-hidden w-100" style="height: 38vh; background-color: #FAF9F6 !important;">
-                <img src="image/Irene-9.jpg" class="w-100 h-100 object-fit-cover" alt="Private studio mentoring session">
-              </div>
+              <div class="position-relative overflow-hidden w-100" style="height: 38vh;"><img src="image/Irene-9.jpg" class="w-100 h-100 object-fit-cover" alt="Mentoring"></div>
               <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                <div>
-                  <div class="d-flex justify-content-between align-items-baseline mb-2">
-                    <h3 class="serif h4 fw-light mb-0">Private Studio Mentoring</h3>
-                    <span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£120.00</span>
-                  </div>
-                  <span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-dark text-white style-badge">Intensive</span>
-                  <p class="text-secondary small mb-0">One-on-one tailored private tutorial blocks designed explicitly around personalized portfolio development plans.</p>
-                </div>
-                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
-                  <span class="small text-muted"><i class="bi bi-person-fill me-2"></i>1-on-1 Mentorship</span>
-                  <button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button>
-                </div>
+                <div><div class="d-flex justify-content-between align-items-baseline mb-2"><h3 class="serif h4 fw-light mb-0">Studio Mentoring</h3><span class="font-monospace text-dark fw-bold fs-5 tracking-widest border-bottom border-dark pb-1">£120.00</span></div><span class="badge rounded-0 text-uppercase tracking-wider px-2 py-1 bg-dark text-white mb-3" style="font-size: 0.55rem;">Intensive</span><p class="text-secondary small mb-0">One-on-one tailored private tutorial blocks designed around portfolio development plans.</p></div>
+                <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center"><span class="small text-muted"><i class="bi bi-person-fill me-2"></i>1-on-1 Mentorship</span><button (click)="addToBag()" class="btn btn-outline-dark rounded-0 btn-sm text-uppercase tracking-wider px-3 py-2 dynamic-btn">Book Slot</button></div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -263,17 +241,43 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-            <!-- 📸 SECTION 7: ATELIER LIVE NOTICE BOARD & CREATIVE CALENDAR -->
+            <!-- 📸 SECTION 7: ATELIER LIVE NOTICE BOARD & STUDIO AMBIENT RADIO -->
       <section id="social-feed" class="container-fluid py-5 px-lg-5" style="background: var(--soft-wash-bg); position: relative; z-index: 10;">
-        <div class="row mb-5 pt-4">
+        <div class="row mb-4 pt-4">
           <div class="col-12 text-center">
             <span class="text-uppercase small willow ls-5 d-block mb-2">Live from the Atelier</span>
             <h2 class="serif display-5 fw-light">Upcoming Events & Open Studio Notes</h2>
           </div>
         </div>
+
+        <!-- 🔮 INTERACTIVE ATELIER SOUND ACCENTS CONTAINER -->
+        <div class="row mb-5 justify-content-center">
+          <div class="col-auto bg-white p-3 border shadow-sm rounded-0 text-center">
+            <span class="text-uppercase small willow ls-2 d-block mb-3 font-monospace" style="font-size: 0.65rem;">
+              <i class="bi bi-soundwave text-dark me-2 pulse-slow"></i>Tune Studio Background Atmosphere
+            </span>
+            <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+              
+              <!-- Ambient Stream 1: Soft Classical Vinyl -->
+              <div class="d-flex align-items-center gap-2">
+                <button (click)="toggleStudioSound('vinyl')" class="btn btn-sm rounded-0 border text-uppercase font-monospace btn-audio-control" [class.btn-dark]="isVinylPlaying" [class.btn-outline-dark]="!isVinylPlaying" style="font-size: 0.65rem;">
+                  <i class="bi me-1" [class.bi-play-fill]="!isVinylPlaying" [class.bi-pause-fill]="isVinylPlaying"></i> Atelier Vinyl
+                </button>
+              </div>
+
+              <!-- Ambient Stream 2: Greenhouse Rain -->
+              <div class="d-flex align-items-center gap-2">
+                <button (click)="toggleStudioSound('rain')" class="btn btn-sm rounded-0 border text-uppercase font-monospace btn-audio-control" [class.btn-dark]="isRainPlaying" [class.btn-outline-dark]="!isRainPlaying" style="font-size: 0.65rem;">
+                  <i class="bi me-1" [class.bi-play-fill]="!isRainPlaying" [class.bi-pause-fill]="isRainPlaying"></i> Glasshouse Rain
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
         
-        <!-- Interactive Multi-Format Gallery Bulletin Board -->
-        <div class="row g-5 justify-content-center pt-2 pb-5">
+        <!-- Grid Row Containment Centred Perfectly -->
+        <div class="row g-4 justify-content-center pt-2 pb-5">
           
           <!-- Element 1: Next Live Event Ticket Frame -->
           <div class="col-12 col-md-4 col-xl-3">
@@ -327,7 +331,7 @@ import { HttpClient } from '@angular/common/http';
         </div>
       </section>
 
-      
+
       <!-- ✉️ SECTION 8: REFINED CONTACT ATELIER -->
       <section id="contact" class="container-fluid py-5 px-lg-5" style="background: var(--charcoal-ink); color: var(--gallery-white); scroll-margin-top: 100px;">
         <div class="row py-5 align-items-center">
@@ -402,17 +406,27 @@ import { HttpClient } from '@angular/common/http';
     </main>
   `
 })
+
 export class App implements OnInit {
   private http = inject(HttpClient);
 
+  // 🪐 Global Control Flow Flags
   showScrollArrow = false;
   isAiPanelOpen = false;
   showSuccessFeedback = false;
   cartCount = 0;
   backendProducts: any[] = [];
   
+  // 🎨 Interactive Custom Wood Framing Customizer Engine Links
   currentFrameColor = '#D9C3A5';
   currentFrameName = 'Natural Oak';
+
+  // 🎵 Immersive Soundscape Atelier Audio Channels
+  isVinylPlaying = false;
+  isRainPlaying = false;
+  
+  private vinylAudio = new Audio('https://soundhelix.com'); 
+  private rainAudio = new Audio('https://soundhelix.com');  
 
   ngOnInit() {
     this.fetchBackendProducts();
@@ -420,15 +434,27 @@ export class App implements OnInit {
 
   fetchBackendProducts() {
     this.http.get<any[]>('http://localhost:8080/api/products').subscribe({
-      next: (data) => {
-        this.backendProducts = data;
-      },
-      error: (err) => {
-        console.log('Standby configuration active.');
-      }
+      next: (data) => { this.backendProducts = data; },
+      error: (err) => { console.log('Standby configuration active.'); }
     });
   }
 
+  // 🔊 Studio Atmospheric Mixer Engine Methods
+  toggleStudioSound(type: string) {
+    if (type === 'vinyl') {
+      this.isVinylPlaying = !this.isVinylPlaying;
+      this.vinylAudio.loop = true;
+      this.vinylAudio.volume = 0.4;
+      this.isVinylPlaying ? this.vinylAudio.play() : this.vinylAudio.pause();
+    } else if (type === 'rain') {
+      this.isRainPlaying = !this.isRainPlaying;
+      this.rainAudio.loop = true;
+      this.rainAudio.volume = 0.5;
+      this.isRainPlaying ? this.rainAudio.play() : this.rainAudio.pause();
+    }
+  }
+
+  // 🖼️ Frame Customizer Matrix Hook
   changeFrame(color: string, name: string) {
     this.currentFrameColor = color;
     this.currentFrameName = name;
@@ -446,13 +472,14 @@ export class App implements OnInit {
   onZoomMove(event: MouseEvent) {
     const container = event.currentTarget as HTMLElement;
     const img = container.querySelector('.zoom-img') as HTMLImageElement;
+    if (!img) return;
     
     const rect = container.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width) * 100;
     const y = ((event.clientY - rect.top) / rect.height) * 100;
     
     img.style.transformOrigin = `${x}% ${y}%`;
-    img.style.transform = 'scale(2.2)'; // 👈 Sets the magnification level flawlessly
+    img.style.transform = 'scale(2.2)'; 
   }
 
   onZoomLeave() {
@@ -475,4 +502,3 @@ export class App implements OnInit {
     this.isAiPanelOpen = !this.isAiPanelOpen;
   }
 }
-

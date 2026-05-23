@@ -311,3 +311,18 @@ input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
   border-color: rgba(43, 43, 43, 0.15) !important;
 }
 
+/* 🎵 AMBIENT ATELIER SOUNDWAVE PULSING EFFECTS */
+.pulse-slow {
+  animation: wave-pulse 2s infinite ease-in-out;
+}
+
+@keyframes wave-pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+.btn-audio-control {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
