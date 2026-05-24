@@ -325,4 +325,136 @@ input::placeholder { color: rgba(255, 255, 255, 0.35) !important; }
 .btn-audio-control {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+/* ✉️ LUXURY MINIMALIST INPUT UNDERLINE DESIGN */
+.premium-underline-input {
+  border-bottom: 1px solid rgba(43, 43, 43, 0.15) !important;
+  color: var(--charcoal-ink) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.4s ease;
+}
 
+.premium-underline-input:focus {
+  border-bottom: 1px solid var(--charcoal-ink) !important;
+}
+
+/* Make textarea resize cleanly without text overflow spikes */
+textarea.premium-underline-input {
+  resize: none;
+}
+
+/* 🎨 PREMIUM LUXURY CANVAS SCRATCH & TEXTURED FIELD DESIGNS */
+.artist-scratch-bg {
+  background-color: #F7F5F0 !important;
+  /* 🌟 Generates an elegant background sketch overlay filter effect */
+  background-image: 
+    linear-gradient(rgba(43, 43, 43, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 43, 43, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  position: relative;
+}
+
+.artist-scratch-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Luxury Input Field Styles */
+.premium-underline-input {
+  border-bottom: 1px solid rgba(43, 43, 43, 0.15) !important;
+  color: var(--charcoal-ink) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.4s ease;
+}
+
+.premium-underline-input:focus {
+  border-bottom: 1px solid var(--charcoal-ink) !important;
+}
+
+textarea.premium-underline-input {
+  resize: none;
+}
+/* 🌟 LUXURY PORTFOLIO SOCIAL ICON INTERACTION EFFECTS */
+.portfolio-social-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.portfolio-social-icon:hover {
+  transform: scale(1.25) translateY(-2px);
+  color: #C5A059 !important; /* Elegant gold brand highlight signature tone */
+}
+
+### 🎨 Step 2: Add Advanced Map & Button Physics to `src/styles.css`
+Open your **`src/styles.css`** file, scroll right down to the absolute bottom line, and append these state rules [INDEX]:
+
+```css
+/* 🗺️ DYNAMIC GEOGRAPHIC GRID MAP SYSTEM ACCENTS */
+.radar-map-canvas {
+  background-color: #EDECE7 !important;
+  background-image: 
+    radial-gradient(circle at center, transparent 10%, #E3E1D9 11%, transparent 12%),
+    radial-gradient(circle at center, transparent 40%, #E3E1D9 41%, transparent 42%);
+  background-size: 60px 60px;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  transition: box-shadow 0.5s ease;
+}
+
+.map-grid-mesh {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: linear-gradient(rgba(43,43,43,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(43,43,43,0.015) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Radar Tracking Echo Animation Wave Rings */
+.radar-pulse-ring {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px; height: 140px;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 50%;
+  animation: map-radar-ping 2.5s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes map-radar-ping {
+  0% { width: 0px; height: 0px; opacity: 1; }
+  100% { width: 300px; height: 300px; opacity: 0; }
+}
+
+.anim-bounce {
+  animation: marker-bounce 2s infinite ease-in-out;
+}
+
+@keyframes marker-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ⚡ HIGH-ANIMATED KINETIC BUTTON INTERACTION MECHANICS */
+.kinetic-send-btn {
+  background-color: var(--charcoal-ink) !important;
+  border: 1px solid var(--charcoal-ink) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+}
+
+.btn-label-text {
+  position: relative;
+  z-index: 5;
+  transition: letter-spacing 0.4s ease;
+}
+
+.kinetic-send-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(43, 43, 43, 0.2) !important;
+}
+
+.kinetic-send-btn:hover .btn-label-text {
+  letter-spacing: 8px !important; /* Elegant kinetic spreading on hover */
