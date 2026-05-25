@@ -1,40 +1,63 @@
-/* 🏛️ IMPORT CORE LOCAL BOOTSTRAP BUNDLES */
+/* 🏛️ IMPORT CORE LOCAL BUNDLES */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 
-/* 🏛️ GLOBAL BRAND PALETTE STYLE TOKENS */
+/* 🏛️ BRAND PALETTE STYLE TOKENS */
 :root {
-  --soft-wash-bg: #FCFAF7;      /* Luxury off-white gallery backdrop */
-  --charcoal-ink: #1C1C1C;      /* Deep high-visibility slate ink text */
-  --gallery-white: #FFFFFF;     /* Pure linen high-contrast background */
-  --willow-slate: #5A6359;      /* Elegant soft sage brand theme color */
-  --atelier-gold: #E2C293;      /* Luxury muted accent gold wire decoration */
+  --soft-wash-bg: #FCFAF7;      
+  --charcoal-ink: #1C1C1C;      
+  --gallery-white: #FFFFFF;     
+  --willow-slate: #5A6359;      
+  --atelier-gold: #D4AF37;      /* High-fidelity true gallery gold leaf tone */
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
   color: var(--charcoal-ink);
   background-color: var(--gallery-white);
   overflow-x: hidden;
 }
 
-.serif {
-  font-family: 'Playfair Display', serif;
+/* 🌟 Typography Updates: Applying Cinzel for fine-art headings */
+h1, h2, h3, h4, h5, h6, .serif {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
 }
 
 .willow {
-  font-family: 'Playfair Display', serif;
   color: var(--willow-slate);
 }
 
-/* 🪐 STICKY NAVBAR MENU (Perfect Symmetry Settings) */
+/* 🪐 STICKY FIXED NAVBAR MENU */
 .navbar {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.brand-wing-flex {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+
+.nav-links-centered-flex {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 1050;
+}
+
+.basket-wing-flex {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
 .nav-editorial-link {
-  font-size: 0.72rem;
-  letter-spacing: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
   position: relative;
   transition: opacity 0.3s ease;
 }
@@ -58,13 +81,35 @@ body {
   font-weight: 700 !important;
 }
 
-/* 🪐 STRICT HIGH-CONTRAST ACCESSIBLE BOOK CLASS CTA BUTTON */
+/* 🎬 CLEAN HERO AND ALIGNMENT CALIBRATIONS */
+.parallax-hero {
+  height: 100vh !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/* 🌟 Visual Upgrade: Double luxury custom frame with gold core matting */
+.luxury-artist-frame {
+  border: 18px solid #242424 !important; /* Deep charcoal outer wood molding */
+  outline: 2px solid var(--atelier-gold) !important; /* Gold wire inner lining fillet */
+  box-shadow: 
+    0 25px 60px rgba(0,0,0,0.25),
+    inset 0 0 20px rgba(0,0,0,0.15) !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-artist-frame:hover {
+  transform: scale(1.015) translateY(-3px);
+}
+
+/* 🛒 WORKSHOPS CIRCLE BUTTONS CONTROLLER */
 .btn-circle-cta {
   width: 110px !important;
   height: 110px !important;
-  background-color: var(--charcoal-ink) !important;   /* Deep charcoal base contrast */
-  color: var(--gallery-white) !important;            /* Crisp linen text readable at any age */
-  border: 2px solid var(--atelier-gold) !important;   /* Luxury gold wire edge accent */
+  background-color: var(--charcoal-ink) !important;
+  color: var(--gallery-white) !important;
+  border: 2px solid var(--atelier-gold) !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.4s ease !important;
 }
@@ -77,54 +122,32 @@ body {
 }
 
 .btn-circle-cta i {
-  color: var(--atelier-gold) !important; /* Gold calendar icons */
+  color: var(--atelier-gold) !important;
 }
 
-/* 🎬 SECTION ELEMENTS LAYOUT RULES */
-.parallax-hero {
-  height: 100vh !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center center !important;
-}
-
+/* Mini Showcase Hover Actions */
 .home-artwork-card {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
 }
-
 .home-artwork-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
 }
-
 .img-zoom-effect {
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .home-artwork-card:hover .img-zoom-effect {
   transform: scale(1.03);
 }
 
-.home-navigation-portal {
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-.home-navigation-portal:hover {
-  border-color: var(--charcoal-ink) !important;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.04) !important;
-}
-
-/* 🔮 PERSISTENT AI DRAWER STYLES */
+/* 🔮 PERSISTENT UTILITIES ASSISTANT PANEL WRAPPERS */
 .ai-drawer-panel {
   transform: translateX(100%);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .ai-drawer-panel.open {
   transform: translateX(0);
 }
-
 .btn-scroll-top, .btn-ai-assistant {
   width: 50px;
   height: 50px;
@@ -133,53 +156,19 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .btn-scroll-top {
   background: var(--gallery-white);
   color: var(--charcoal-ink);
   opacity: 0;
   visibility: hidden;
 }
-
 .btn-scroll-top.visible {
   opacity: 1;
   visibility: visible;
 }
-
 .btn-ai-assistant {
   background: var(--charcoal-ink);
 }
-
 .btn-scroll-top:hover, .btn-ai-assistant:hover {
   transform: scale(1.1);
-}
-
-/* 🏛️ NAVBAR TRUE DEAD-CENTER SYMMETRY WINGS CONTROLLER */
-.brand-wing-flex {
-  flex: 1 !important;
-  display: flex !important;
-  justify-content: flex-start !important;
-}
-
-.nav-links-centered-flex {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  z-index: 1050;
-}
-
-.basket-wing-flex {
-  flex: 1 !important;
-  display: flex !important;
-  justify-content: flex-end !important;
-}
-
-/* Gold Accent Text Interaction */
-.link-gold-hover {
-  transition: color 0.3s ease, letter-spacing 0.4s ease;
-}
-.link-gold-hover:hover {
-  color: #FFFFFF !important;
-  letter-spacing: 1.5px !important;
 }
