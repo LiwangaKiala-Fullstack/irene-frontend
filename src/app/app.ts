@@ -1,39 +1,39 @@
 import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   template: `
-    <!-- 🏛️ MASTER NAVBAR MENU (Persistent on all pages) -->
-    <nav class="navbar fixed-top py-4 px-lg-5" style="backdrop-filter: blur(15px); background: rgba(255, 255, 255, 0.85); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.03);">
-      <div class="container-fluid d-flex align-items-center position-relative">
+    <!-- 🏛️ MASTER NAVIGATION MENU (Strict 3-Way Grid Symmetrical Balance) -->
+    <nav class="navbar fixed-top py-4 px-lg-5" style="backdrop-filter: blur(15px); background: rgba(255, 255, 255, 0.9); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.04);">
+      <div class="container-fluid d-flex align-items-center justify-content-between position-relative m-0 p-0 w-100">
         
-        <!-- Left Column: Logo Stacked -->
-        <div class="brand-container d-flex flex-column align-items-start m-0 p-0">
+        <!-- Left Column: Branding Box (Weighted 1) -->
+        <div class="d-flex flex-column align-items-start m-0 p-0 brand-wing-flex">
           <a class="navbar-brand fw-bold fs-3 serif mb-0 p-0 text-dark text-decoration-none" routerLink="/">
             Irene Caboni
           </a>
-          <span class="willow font-monospace m-0 text-uppercase text-nowrap ps-4" style="font-size: 0.6rem; letter-spacing: 1.5px; margin-top: 6px !important; display: block;">
+          <span class="willow font-monospace m-0 text-uppercase text-nowrap ps-1" style="font-size: 0.6rem; letter-spacing: 1.5px; margin-top: 3px !important; display: block;">
             Fine Art & Illustration
           </span>
         </div>
         
-        <!-- Center Column: Multi-Page Links (No more # hashtags!) -->
-        <div class="mx-auto d-none d-lg-flex align-items-center gap-5">
-          <a routerLink="/" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Home</a>
-          <a routerLink="/bio" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Bio</a>
-          <a routerLink="/gallery" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Gallery</a>
-          <a routerLink="/workshops" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Workshops</a>
-          <a routerLink="/collection" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Collection</a>
-          <a routerLink="/contact" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Contact</a>
+        <!-- Center Column: True Mathematical Dead-Center Navigation (Weighted 2) -->
+        <div class="nav-links-centered-flex d-none d-lg-flex align-items-center justify-content-center gap-5">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Home</a>
+          <a routerLink="/bio" routerLinkActive="active" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Bio</a>
+          <a routerLink="/gallery" routerLinkActive="active" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Gallery</a>
+          <a routerLink="/workshops" routerLinkActive="active" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Workshops</a>
+          <a routerLink="/collection" routerLinkActive="active" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Collection</a>
+          <a routerLink="/contact" routerLinkActive="active" class="nav-editorial-link small text-uppercase fw-bold text-decoration-none text-dark">Contact</a>
         </div>
         
-        <!-- Right Column: Art Bag -->
-        <div class="d-flex align-items-center ms-auto">
+        <!-- Right Column: Shopping Basket Box (Weighted 3) -->
+        <div class="d-flex align-items-center justify-content-end basket-wing-flex">
           <div class="position-relative magnetic-bag" style="cursor: pointer;" (click)="addToBag()">
             <i class="bi bi-bag fs-2 text-dark"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.65rem; padding: 0.5em 0.7em;">
@@ -45,12 +45,11 @@ import { CommonModule } from '@angular/common';
       </div>
     </nav>
 
-    <!-- 🪐 THE DYNAMIC ROUTER WINDOW -->
-    <!-- This tag injects ONLY the current page component, keeping them completely separate! -->
+    <!-- 🪐 MAIN CONTENT FRAME -->
     <main style="padding-top: 0;">
       <router-outlet></router-outlet>
       
-      <!-- ✨ FLOATING UTILITY CONTROLS -->
+      <!-- ✨ FLOATING ASSISTANT CONTROLS -->
       <div class="floating-controls d-flex flex-column gap-3 position-fixed bottom-4 end-4" style="z-index: 9999;">
         <button (click)="scrollToTop()" [class.visible]="showScrollArrow" class="btn-scroll-top d-flex align-items-center justify-content-center shadow-sm">
           <i class="bi bi-arrow-up"></i>
@@ -60,7 +59,7 @@ import { CommonModule } from '@angular/common';
         </button>
       </div>
 
-      <!-- 🔮 SLIDE-OUT AI DRAWER PANEL -->
+      <!-- AI DRAWER PANEL -->
       <div [class.open]="isAiPanelOpen" class="ai-drawer-panel position-fixed top-0 end-0 h-100 bg-white shadow-lg d-flex flex-column" style="z-index: 10000; width: 380px;">
         <div class="p-4 border-bottom d-flex justify-content-between align-items-center bg-light">
           <div>
@@ -97,7 +96,7 @@ export class App implements OnInit {
   fetchBackendProducts() {
     this.http.get<any[]>('http://localhost:8080/api/products').subscribe({
       next: (data) => { this.backendProducts = data; },
-      error: (err) => { console.log('Standby configuration active.'); }
+      error: (err) => { console.log('Standby core tracking configured.'); }
     });
   }
 
