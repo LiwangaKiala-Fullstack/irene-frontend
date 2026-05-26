@@ -29,27 +29,26 @@ h1, h2, h3, h4, h5, h6, .serif {
   color: var(--willow-slate);
 }
 
-/* 🪐 NAVBAR COLUMN GEOMETRY (Finely Tuned Right-Middle Balanced Spacing) */
+/* 🪐 STICKY NAVBAR MENU */
 .navbar {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: fixed !important;
+  width: 100% !important;
 }
 
-/* 🌟 Left Column (Logo Area): Expanded from 15% to 30% to push the menu lines away from her name */
 .brand-wing-flex {
-  width: 30% !important; 
+  width: 25% !important; 
   display: flex !important;
   justify-content: flex-start !important;
 }
 
-/* 🌟 Center Column (Nav Links Group): Compressed to 50% to bunch them elegantly on the right-middle side */
 .nav-links-centered-flex {
-  width: 50% !important; 
+  width: 55% !important; 
   display: flex !important;
   justify-content: center !important;
-  gap: 2.2rem !important; /* Balanced gap spacing between menu choices */
+  gap: 2.2rem !important; 
 }
 
-/* 🌟 Right Column (Art Bag Area): Retained at 20% to leave a safe breathing space before the basket */
 .basket-wing-flex {
   width: 20% !important;
   display: flex !important;
@@ -83,7 +82,7 @@ h1, h2, h3, h4, h5, h6, .serif {
   font-weight: 700 !important;
 }
 
-/* 🎬 CORE FIXED PARALLAX ENGINE & DYNAMIC ANIMATION LAYERS */
+/* 🎬 CORE FIXED PARALLAX ENGINE */
 .parallax-hero {
   height: 100vh !important;
   background-attachment: fixed !important; 
@@ -93,181 +92,76 @@ h1, h2, h3, h4, h5, h6, .serif {
   position: relative;
 }
 
-.animate-poetic-fade {
-  animation: visual-manifesto-fade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+/* 🌟 DYNAMIC UTILITY INTERACTION MARKS (FIXES FOR ARROW & ASSISTANT) */
+.floating-controls {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  flex-column: column !important;
+  gap: 15px !important;
 }
 
-@keyframes visual-manifesto-fade {
-  0% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
-  100% { opacity: 0.95; transform: translateY(0); filter: blur(0); }
+/* 🌟 Visual Repair: Explicit layout definitions to force the arrow button visible on scroll */
+.btn-scroll-top {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background-color: var(--gallery-white) !important;
+  color: var(--charcoal-ink) !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+  cursor: pointer !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(10px) !important;
 }
 
-/* 🌟 Double luxury museum frame with a gold core matting layout overlay */
+.btn-scroll-top.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.btn-ai-assistant {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background-color: var(--charcoal-ink) !important;
+  color: var(--gallery-white) !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+  cursor: pointer !important;
+  transition: transform 0.3s ease !important;
+}
+
+.btn-scroll-top:hover, .btn-ai-assistant:hover {
+  transform: scale(1.1) !important;
+}
+
+/* 🌟 Clean Slide-out AI Panel Drawer Engineering */
+.ai-drawer-panel {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  height: 100vh !important;
+  width: 380px !important;
+  background-color: var(--gallery-white) !important;
+  box-shadow: -15px 0 40px rgba(0,0,0,0.1) !important;
+  z-index: 10000 !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.ai-drawer-panel.open {
+  transform: translateX(0) !important;
+}
+
+/* 🌟 Framing & Gallery rules */
 .luxury-artist-frame {
   border: 18px solid #242424 !important; 
   outline: 2px solid var(--museum-gold) !important; 
   box-shadow: 0 25px 60px rgba(0,0,0,0.25), inset 0 0 20px rgba(0,0,0,0.15) !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.luxury-artist-frame:hover {
-  transform: scale(1.015) translateY(-3px);
-}
-
-/* 🛒 WORKSHOPS CIRCLE BUTTONS CONTROLLER */
-.btn-circle-cta {
-  width: 110px !important;
-  height: 110px !important;
-  background-color: var(--charcoal-ink) !important;
-  color: var(--gallery-white) !important;
-  border: 2px solid var(--museum-gold) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.4s ease !important;
-}
-
-.btn-circle-cta:hover {
-  transform: scale(1.12) rotate(-4deg) !important;
-  background-color: #2B2B2B !important;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
-  border-color: var(--gallery-white) !important;
-}
-
-.btn-circle-cta i {
-  color: var(--museum-gold) !important;
-}
-
-.home-artwork-card {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-}
-.home-artwork-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
-}
-.img-zoom-effect {
-  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.home-artwork-card:hover .img-zoom-effect {
-  transform: scale(1.03);
-}
-
-.home-navigation-portal {
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-.home-navigation-portal:hover {
-  border-color: var(--charcoal-ink) !important;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.04) !important;
-}
-
-/* 🔮 PERSISTENT GRAPHICS UTILITIES */
-.ai-drawer-panel {
-  transform: translateX(100%);
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.ai-drawer-panel.open {
-  transform: translateX(0);
-}
-.btn-scroll-top, .btn-ai-assistant {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.btn-scroll-top {
-  background: var(--gallery-white);
-  color: var(--charcoal-ink);
-  opacity: 0;
-  visibility: hidden;
-}
-.btn-scroll-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-.btn-ai-assistant {
-  background: var(--charcoal-ink);
-}
-.btn-scroll-top:hover, .btn-ai-assistant:hover {
-  transform: scale(1.1);
-}
-/* 🏛️ ARCHITECTURAL LUXURY CONTACT INTERACTION OUTLINES */
-
-.contact-underline-input {
-  background: transparent !important;
-  border: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 0px !important;
-  outline: none !important;
-  box-shadow: none !important;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transition: border-color 0.4s ease;
-}
-
-.contact-underline-input:focus {
-  border-bottom-color: var(--atelier-gold) !important;
-}
-
-.hover-gold-accent:hover {
-  color: var(--atelier-gold) !important;
-}
-
-.contact-submit-trigger:hover {
-  background-color: #FFFFFF !important;
-  color: #1C1C1C !important;
-  transform: translateY(-2px);
-}
-
-/* Radar Mapping Canvas Shell Components */
-.navigation-radar-shield {
-  transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-}
-
-.navigation-radar-shield:hover {
-  border-color: var(--charcoal-ink) !important;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.06) !important;
-}
-
-.map-grid-mesh {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
-  background-size: 24px 24px;
-  z-index: 1;
-}
-
-.radar-pulse-ring {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px; height: 50px;
-  border: 1px solid rgba(220, 53, 69, 0.3);
-  border-radius: 50%;
-  animation: radarEchoPulse 2.2s infinite linear;
-  z-index: -1;
-}
-
-@keyframes radarEchoPulse {
-  0% { width: 50px; height: 50px; opacity: 1; }
-  100% { width: 150px; height: 150px; opacity: 0; }
-}
-
-.anim-bounce {
-  animation: compassBounce 2s infinite ease-in-out;
-}
-
-@keyframes compassBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Room Loading Entrance Track Animation */
-.animation-room-fade {
-  animation: roomReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes roomReveal {
-  0% { opacity: 0; filter: blur(2px); }
-  100% { opacity: 1; filter: blur(0); }
 }
