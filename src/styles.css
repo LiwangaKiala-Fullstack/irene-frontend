@@ -190,3 +190,84 @@ h1, h2, h3, h4, h5, h6, .serif {
 .btn-scroll-top:hover, .btn-ai-assistant:hover {
   transform: scale(1.1);
 }
+/* 🏛️ ARCHITECTURAL LUXURY CONTACT INTERACTION OUTLINES */
+
+.contact-underline-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 0px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: border-color 0.4s ease;
+}
+
+.contact-underline-input:focus {
+  border-bottom-color: var(--atelier-gold) !important;
+}
+
+.hover-gold-accent:hover {
+  color: var(--atelier-gold) !important;
+}
+
+.contact-submit-trigger:hover {
+  background-color: #FFFFFF !important;
+  color: #1C1C1C !important;
+  transform: translateY(-2px);
+}
+
+/* Radar Mapping Canvas Shell Components */
+.navigation-radar-shield {
+  transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.navigation-radar-shield:hover {
+  border-color: var(--charcoal-ink) !important;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.06) !important;
+}
+
+.map-grid-mesh {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 1;
+}
+
+.radar-pulse-ring {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px; height: 50px;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 50%;
+  animation: radarEchoPulse 2.2s infinite linear;
+  z-index: -1;
+}
+
+@keyframes radarEchoPulse {
+  0% { width: 50px; height: 50px; opacity: 1; }
+  100% { width: 150px; height: 150px; opacity: 0; }
+}
+
+.anim-bounce {
+  animation: compassBounce 2s infinite ease-in-out;
+}
+
+@keyframes compassBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Room Loading Entrance Track Animation */
+.animation-room-fade {
+  animation: roomReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes roomReveal {
+  0% { opacity: 0; filter: blur(2px); }
+  100% { opacity: 1; filter: blur(0); }
+}
