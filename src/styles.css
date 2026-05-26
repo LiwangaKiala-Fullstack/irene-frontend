@@ -8,7 +8,8 @@
   --charcoal-ink: #1C1C1C;      
   --gallery-white: #FFFFFF;     
   --willow-slate: #5A6359;      
-  --atelier-gold: #D4AF37;      /* High-fidelity true gallery gold leaf tone */
+  --atelier-gold: #E2C293;      
+  --museum-gold: #D4AF37;       
 }
 
 body {
@@ -19,7 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-/* 🌟 Typography Updates: Applying Cinzel for fine-art headings */
 h1, h2, h3, h4, h5, h6, .serif {
   font-family: 'Cinzel', serif;
   letter-spacing: 1px;
@@ -29,34 +29,36 @@ h1, h2, h3, h4, h5, h6, .serif {
   color: var(--willow-slate);
 }
 
-/* 🪐 STICKY FIXED NAVBAR MENU */
+/* 🪐 NAVBAR COLUMN GEOMETRY (Finely Tuned Right-Middle Balanced Spacing) */
 .navbar {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* 🌟 Left Column (Logo Area): Expanded from 15% to 30% to push the menu lines away from her name */
 .brand-wing-flex {
-  flex: 1 !important;
+  width: 30% !important; 
   display: flex !important;
   justify-content: flex-start !important;
 }
 
+/* 🌟 Center Column (Nav Links Group): Compressed to 50% to bunch them elegantly on the right-middle side */
 .nav-links-centered-flex {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  z-index: 1050;
+  width: 50% !important; 
+  display: flex !important;
+  justify-content: center !important;
+  gap: 2.2rem !important; /* Balanced gap spacing between menu choices */
 }
 
+/* 🌟 Right Column (Art Bag Area): Retained at 20% to leave a safe breathing space before the basket */
 .basket-wing-flex {
-  flex: 1 !important;
+  width: 20% !important;
   display: flex !important;
   justify-content: flex-end !important;
 }
 
 .nav-editorial-link {
   font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 2.5px;
   position: relative;
   transition: opacity 0.3s ease;
@@ -81,21 +83,30 @@ h1, h2, h3, h4, h5, h6, .serif {
   font-weight: 700 !important;
 }
 
-/* 🎬 CLEAN HERO AND ALIGNMENT CALIBRATIONS */
+/* 🎬 CORE FIXED PARALLAX ENGINE & DYNAMIC ANIMATION LAYERS */
 .parallax-hero {
   height: 100vh !important;
+  background-attachment: fixed !important; 
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center center !important;
+  position: relative;
 }
 
-/* 🌟 Visual Upgrade: Double luxury custom frame with gold core matting */
+.animate-poetic-fade {
+  animation: visual-manifesto-fade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes visual-manifesto-fade {
+  0% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+  100% { opacity: 0.95; transform: translateY(0); filter: blur(0); }
+}
+
+/* 🌟 Double luxury museum frame with a gold core matting layout overlay */
 .luxury-artist-frame {
-  border: 18px solid #242424 !important; /* Deep charcoal outer wood molding */
-  outline: 2px solid var(--atelier-gold) !important; /* Gold wire inner lining fillet */
-  box-shadow: 
-    0 25px 60px rgba(0,0,0,0.25),
-    inset 0 0 20px rgba(0,0,0,0.15) !important;
+  border: 18px solid #242424 !important; 
+  outline: 2px solid var(--museum-gold) !important; 
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25), inset 0 0 20px rgba(0,0,0,0.15) !important;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -109,7 +120,7 @@ h1, h2, h3, h4, h5, h6, .serif {
   height: 110px !important;
   background-color: var(--charcoal-ink) !important;
   color: var(--gallery-white) !important;
-  border: 2px solid var(--atelier-gold) !important;
+  border: 2px solid var(--museum-gold) !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.4s ease !important;
 }
@@ -122,10 +133,9 @@ h1, h2, h3, h4, h5, h6, .serif {
 }
 
 .btn-circle-cta i {
-  color: var(--atelier-gold) !important;
+  color: var(--museum-gold) !important;
 }
 
-/* Mini Showcase Hover Actions */
 .home-artwork-card {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
 }
@@ -140,7 +150,15 @@ h1, h2, h3, h4, h5, h6, .serif {
   transform: scale(1.03);
 }
 
-/* 🔮 PERSISTENT UTILITIES ASSISTANT PANEL WRAPPERS */
+.home-navigation-portal {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.home-navigation-portal:hover {
+  border-color: var(--charcoal-ink) !important;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.04) !important;
+}
+
+/* 🔮 PERSISTENT GRAPHICS UTILITIES */
 .ai-drawer-panel {
   transform: translateX(100%);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);

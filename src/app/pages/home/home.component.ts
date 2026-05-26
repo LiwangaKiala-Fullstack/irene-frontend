@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -17,12 +17,12 @@ interface UpcomingEvent {
   template: `
     <!-- 🎨 SECTION 1: STRONG POETIC HERO DISPLAY -->
     <section class="vh-100 d-flex align-items-center justify-content-center text-center px-4 parallax-hero" 
-             style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35)), url('/image/a passion for creativity.jpg'); background-size: cover; background-position: center center;">
+             style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35)), url('/image/a passion for creativity.jpg');">
       <div style="padding-top: 15vh !important;">
-        <span class="serif text-white small d-block mb-3 fst-italic text-capitalize fs-4 fw-light" style="opacity: 0.95; text-shadow: 0 2px 10px rgba(0,0,0,0.5); font-family: 'Cormorant Garamond', serif !important;">
+        <span class="serif text-white small d-block mb-3 fst-italic text-capitalize fs-4 fw-light animate-poetic-fade" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5); font-family: 'Cormorant Garamond', serif !important;">
           "To see a World in a Grain of Sand, And a Heaven in a Wild Flower..."
         </span>
-        <h1 class="serif m-0 text-white" style="font-size: clamp(2.4rem, 6.5vw, 4.5rem); font-weight: 400; line-height: 1.15; text-shadow: 0 2px 20px rgba(0,0,0,0.6);">
+        <h1 class="serif m-0 text-white animate-poetic-fade" style="font-size: clamp(2.4rem, 6.5vw, 4.5rem); font-weight: 400; line-height: 1.15; text-shadow: 0 2px 20px rgba(0,0,0,0.6); animation-delay: 0.3s;">
           A Passion for <br><span class="fst-italic" style="color: #E2C293 !important;">Creativity</span>
         </h1>
       </div>
@@ -153,3 +153,4 @@ export class HomeComponent {
     }
   ];
 }
+
